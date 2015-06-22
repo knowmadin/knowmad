@@ -1,15 +1,22 @@
-db:
+postgres:
   image: postgres
   ports:
     - "5432"
 
-web:
+rails:
   build: .
   ports:
     - "3000:3000"
   links:
-   - db
+   - postgres
    - redis
 
 redis:
   image: redis
+
+nginx:
+  build: ./nginx
+  links:
+    - web
+  ports:
+    - "80:80"
