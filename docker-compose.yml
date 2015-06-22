@@ -17,6 +17,6 @@ redis:
 nginx:
   build: ./nginx
   links:
-    - web
+    - rails
   ports:
     - "80:80"
