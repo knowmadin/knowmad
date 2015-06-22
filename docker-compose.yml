@@ -1,3 +1,7 @@
+db:
+  image: postgres
+  ports:
+    - "5432"
 rails:
   build: .
   ports:
