@@ -1,11 +1,11 @@
 development: &default
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql2
+  encoding: utf8
   database: knowmad_development
   pool: 5
   username: postgres
   password:
-  host: db
+  host: mysql
 
 test:
   <<: *default
