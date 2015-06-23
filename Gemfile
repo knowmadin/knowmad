@@ -11,6 +11,7 @@ gem 'unicorn-rails'
 gem 'redis'
 gem 'devise'
 gem 'omniauth'
+gem "twitter-bootstrap-rails"
 
 group :development do
   gem 'better_errors'
