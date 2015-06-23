@@ -12,6 +12,7 @@ gem 'redis'
 gem 'devise'
 gem 'omniauth'
 gem "twitter-bootstrap-rails"
+gem 'rubocop', require: false
 
 group :development do
   gem 'better_errors'

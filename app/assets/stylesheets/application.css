@@ -14,6 +14,10 @@
  *= require_self
  */
 
+body {
+  background-color: #eee;
+}
+
 .navbar-default {
   background-color: #428bca;
   border-color: #357ebd;
@@ -21,4 +25,10 @@
 
 .navbar-brand {
   padding: 5px 5px;
+}
+
+footer {
+  max-width: 330px;
+  padding: 0 15px;
+  margin: 0 auto;
 }
