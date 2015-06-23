@@ -11,7 +11,6 @@ gem 'unicorn-rails', '~> 2.2'
 gem 'redis', '~> 3.2'
 gem 'devise', '~> 3.5'
 gem 'omniauth', '~> 1.2'
-gem 'twitter-bootstrap-rails', '~> 3.2'
 
 group :development do
   gem 'better_errors'
