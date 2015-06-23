@@ -50,3 +50,7 @@ footer {
   padding: 0 15px;
   margin: 0 auto;
 }
+
+.form-signin .links {
+  margin-top: 10px;
+}
