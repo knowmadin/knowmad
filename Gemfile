@@ -2,17 +2,16 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.2'
 gem 'sass-rails', '~> 5.0'
-gem 'mysql2'
+gem 'mysql2', '~> 0.3'
 gem 'uglifier', '>= 1.3.0'
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 4.0'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'unicorn-rails'
-gem 'redis'
-gem 'devise'
-gem 'omniauth'
-gem "twitter-bootstrap-rails"
-gem 'rubocop', require: false
+gem 'unicorn-rails', '~> 4.9'
+gem 'redis', '~> 3.2'
+gem 'devise', '~> 3.5'
+gem 'omniauth', '~> 1.2'
+gem 'twitter-bootstrap-rails', '~> 3.2'
 
 group :development do
   gem 'better_errors'
@@ -20,6 +19,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'rubocop', require: false
   gem 'rspec-rails', '~> 3.0'
   gem 'byebug'
   gem 'web-console', '~> 2.0'

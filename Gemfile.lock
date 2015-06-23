@@ -207,8 +207,8 @@ DEPENDENCIES
   byebug
   devise
   jbuilder (~> 2.0)
-  jquery-rails
-  mysql2
+  jquery-rails (~> 4.0)
+  mysql2 (~> 0.3)
   omniauth
   rails (= 4.2.2)
   redis
