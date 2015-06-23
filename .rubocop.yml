@@ -40,12 +40,6 @@ Style/ClosingParenthesisIndentation:
 Style/Documentation:
   Enabled: false
 
-Style/EmptyLinesAroundClassBody:
-  EnforcedStyle: empty_lines
-
-Style/EmptyLinesAroundModuleBody:
-  EnforcedStyle: no_empty_lines
-
 Style/Lambda:
   Enabled: false
 
