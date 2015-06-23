@@ -1,0 +1,13 @@
+language: ruby
+
+rvm:
+  - 2.2
+
+cache: bundler
+
+sudo: false
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
