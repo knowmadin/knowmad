@@ -66,3 +66,10 @@ footer {
   padding: 0 15px;
   margin: 0 auto;
 }
+
+.form-auth.new-confirmation input[type="email"]{
+  margin-bottom: 10px;
+
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
