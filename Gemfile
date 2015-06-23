@@ -10,6 +10,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'unicorn-rails'
 gem 'redis'
 gem 'devise'
+gem 'omniauth'
 
 group :development do
   gem 'better_errors'
