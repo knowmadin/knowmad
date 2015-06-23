@@ -10,7 +10,12 @@
   <h2>Resend confirmation instructions</h2>
 
   <%= f.label :email, class: 'sr-only' %><br />
-  <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: 'form-control' %>
+  <%= f.email_field :email,
+    autofocus: true,
+    value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
+    class: 'form-control',
+    placeholder: 'Email address'
+  %>
 
   <%= f.submit "Resend confirmation instructions", class: 'btn btn-lg btn-primary btn-block' %>
 
