@@ -8,7 +8,7 @@
   <%= f.label :password, class: 'sr-only'%>
   <%= f.password_field :password, autocomplete: "off", class: 'form-control password', placeholder: "Password (#{@minimum_password_length} characters minimum)" %>
 
-  <%= f.label :password_confirmation, class: 'sr-only' %><br />
+  <%= f.label :password_confirmation, class: 'sr-only' %>
   <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control confirmation', placeholder: 'Confirm password' %>
 
   <%= f.submit "Sign un", class: 'btn btn-lg btn-primary btn-block' %>

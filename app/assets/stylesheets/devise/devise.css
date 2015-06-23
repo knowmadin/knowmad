@@ -47,7 +47,7 @@ body {
 
 .form-auth.form-sign-up input[type="password"].password {
   margin-bottom: -1px;
-  border: 0;
+  border-radius: 0;
 }
 
 .form-auth.form-sign-up input[type="password"].confirmation {
