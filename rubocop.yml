@@ -15,6 +15,9 @@ Metrics/LineLength:
 Metrics/MethodLength:
   Max: 25
 
+Metrics/LineLength:
+  Max: 120
+
 Style/AlignHash:
   EnforcedHashRocketStyle: table
   EnforcedColonStyle: table
