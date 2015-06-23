@@ -4,22 +4,22 @@ body {
   background-color: #eee;
 }
 
-.form-signin {
+.form-auth {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
 }
 
-.form-signin .form-signin-heading,
-.form-signin .checkbox {
+.form-auth .form-signin-heading,
+.form-auth .checkbox {
   margin-bottom: 10px;
 }
 
-.form-signin .checkbox {
+.form-auth .checkbox {
   font-weight: normal;
 }
 
-.form-signin .form-control {
+.form-auth .form-control {
   position: relative;
   height: auto;
   -webkit-box-sizing: border-box;
@@ -29,28 +29,40 @@ body {
   font-size: 16px;
 }
 
-.form-signin .form-control:focus {
+.form-auth .form-control:focus {
   z-index: 2;
 }
 
-.form-signin input[type="email"] {
+.form-auth input[type="email"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.form-signin input[type="password"] {
+.form-auth input[type="password"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.form-auth.form-sign-up input[type="password"].password {
+  margin-bottom: -1px;
+  border: 0;
+}
+
+.form-auth.form-sign-up input[type="password"].confirmation {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+.form-auth .links {
+  margin-top: 10px;
 }
 
 footer {
   max-width: 330px;
   padding: 0 15px;
   margin: 0 auto;
-}
-
-.form-signin .links {
-  margin-top: 10px;
 }
