@@ -15,6 +15,10 @@
  */
 
 .navbar-default {
-    background-color: #00B8FF;
-    border-color: #e7e7e7;
+  background-color: #00B8FF;
+  border-color: #e7e7e7;
+}
+
+.navbar-brand {
+  padding: 5px 5px;
 }
