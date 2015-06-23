@@ -7,7 +7,7 @@
   }) do |f| %>
   <%= devise_error_messages! %>
 
-  <h2>Resend confirmation instructions</h2>
+  <h2>Resend confirmation email</h2>
 
   <%= f.label :email, class: 'sr-only' %><br />
   <%= f.email_field :email,
@@ -17,7 +17,7 @@
     placeholder: 'Email address'
   %>
 
-  <%= f.submit "Resend confirmation instructions", class: 'btn btn-lg btn-primary btn-block' %>
+  <%= f.submit "Resend confirmation email", class: 'btn btn-lg btn-primary btn-block' %>
 
   <%= render "devise/shared/links" %>
 <% end %>
