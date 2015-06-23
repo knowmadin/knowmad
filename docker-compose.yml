@@ -1,14 +1,14 @@
-postgres:
-  image: postgres
+mysql:
+  image: tutum/mysql
   ports:
-    - "5432"
+    - "3306:3306"
 
 rails:
   build: .
   ports:
     - "3000"
   links:
-   - postgres
+   - mysql
    - redis
 
 redis:
