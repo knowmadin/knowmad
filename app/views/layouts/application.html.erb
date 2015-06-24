@@ -37,11 +37,11 @@
         <% if controller_name == 'home' %>
           <div class="input-group">
             <%= form_for(:user, as: :user, url: session_path(:user)) do |f| %>
-              <%= f.label :email, class: 'sr-only' %>
-              <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email', tabindex: '2' %>
-
               <%= f.label :password, class: 'sr-only'%>
-              <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password', tabindex: '1' %>
+              <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password', tabindex: '2' %>
+
+              <%= f.label :email, class: 'sr-only' %>
+              <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email', tabindex: '1' %>
 
               <div class="input-group-btn">
                 <button type="button" class="btn btn-default" tabindex="3">Sign in</button>
