@@ -9,7 +9,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    super do
+    super do |resource|
       if resource.errors.any?
         flash[:error] = resource.errors.full_messages.to_sentence
       end
