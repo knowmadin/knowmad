@@ -35,8 +35,8 @@
         </a>
 
         <% if controller_name == 'home' %>
-          <div class="input-group">
-            <%= form_for(:user, as: :user, url: session_path(:user)) do |f| %>
+          <%= form_for(:user, as: :user, url: session_path(:user)) do |f| %>
+            <div class="input-group">
               <%= f.label :password, class: 'sr-only'%>
               <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password', tabindex: '2' %>
 
@@ -55,8 +55,8 @@
                   <li><%= link_to "Forgot your password?", new_password_path(:user) %></li>
                 </ul>
               </div>
-            <% end %>
-          </div>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>
