@@ -9,7 +9,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    super.tap { |_| active_record_errors_to_flash }
+    super do
+      if resource.errors.any?
+        flash[:error] = resource.errors.full_messages.to_sentence
+      end
+    end
   end
 
   # GET /resource/edit
@@ -57,10 +61,4 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
-
-  def active_record_errors_to_flash
-    if resource.errors.any?
-      flash[:error] = resource.errors.full_messages.to_sentence
-    end
-  end
 end
