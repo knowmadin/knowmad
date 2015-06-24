@@ -7,9 +7,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  #POST /resource
+  # POST /resource
   def create
-    super.tap(&:active_record_errors_to_flash)
+    super.tap { |_| active_record_errors_to_flash }
   end
 
   # GET /resource/edit
@@ -60,7 +60,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def active_record_errors_to_flash
     if resource.errors.any?
-      flash[:error] = color.errors.full_messages.to_sentence
+      flash[:error] = resource.errors.full_messages.to_sentence
     end
   end
 end
