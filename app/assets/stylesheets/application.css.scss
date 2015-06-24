@@ -11,6 +11,20 @@ body {
 .navbar-default {
   background-color: #428bca;
   border-color: #357ebd;
+
+  input {
+    width: 30%;
+    float: right;
+  }
+
+  .input-group-btn {
+    height: 39px;
+    margin-top: 5px;
+
+    .btn {
+      height: 38px;
+    }
+  }
 }
 
 .navbar-brand {
