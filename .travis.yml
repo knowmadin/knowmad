@@ -7,6 +7,12 @@ cache: bundler
 
 sudo: false
 
+services:
+  - mysql
+
+before_script:
+  - rake db:migrate
+
 notifications:
   email:
     on_success: never
