@@ -34,7 +34,7 @@ Rails.application.configure do
     domain:               'knowmad.in',
     user_name:            ENV['KNOWMAD_GOOGLE_APPS_USER_NAME'],
     password:             ENV['KNOWMAD_GOOGLE_APPS_PASSWORD'],
-    authentication:       :plain,
+    authentication:       :login,
     enable_starttls_auto: true
   }
 
