@@ -8,5 +8,7 @@ development: &default
   host: mysql
 
 test:
-  <<: *default
-  database: knowmad_test
+  adapter: mysql2
+  database: myapp_test
+  username: travis
+  encoding: utf8
