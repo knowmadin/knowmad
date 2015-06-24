@@ -23,10 +23,6 @@
 
   .form-control:focus {
     z-index: 2;
-  }
-
-  .form-control:focus {
-    z-index: 2;
 
     &:after, &:before {
       z-index: 2;
