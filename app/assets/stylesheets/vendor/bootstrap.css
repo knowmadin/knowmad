@@ -4927,11 +4927,11 @@ a.label:focus {
   background-color: #808080;
 }
 .label-primary {
-  background-color: #158cba;
+  background-color: #337ab7;
 }
 .label-primary[href]:hover,
 .label-primary[href]:focus {
-  background-color: #106a8c;
+  background-color: #286090;
 }
 .label-success {
   background-color: #28b62c;
@@ -5751,22 +5751,22 @@ button.list-group-item-danger.active:focus {
   border-bottom-color: transparent;
 }
 .panel-primary {
-  border-color: transparent;
+  border-color: #337ab7;
 }
 .panel-primary > .panel-heading {
   color: #ffffff;
-  background-color: #158cba;
-  border-color: transparent;
+  background-color: #337ab7;
+  border-color: #337ab7;
 }
 .panel-primary > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: transparent;
+  border-top-color: #337ab7;
 }
 .panel-primary > .panel-heading .badge {
-  color: #158cba;
+  color: #337ab7;
   background-color: #ffffff;
 }
 .panel-primary > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: transparent;
+  border-bottom-color: #337ab7;
 }
 .panel-success {
   border-color: transparent;
@@ -6836,12 +6836,6 @@ button.close {
 .btn-group.open .dropdown-toggle.btn-default {
   background-color: #eeeeee;
   border-color: #e2e2e2;
-}
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-group.open .dropdown-toggle.btn-primary {
-  background-color: #158cba;
-  border-color: #127ba3;
 }
 .btn-success:hover,
 .btn-success:focus,
