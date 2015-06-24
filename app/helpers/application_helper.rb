@@ -8,6 +8,7 @@ module ApplicationHelper
     "&copy; Knowmad #{Time.now.year}".html_safe
   end
 
+  # stolen from bootstrap rails
   def bootstrap_flash(options = {})
     flash_messages = []
     flash.each do |type, message|
