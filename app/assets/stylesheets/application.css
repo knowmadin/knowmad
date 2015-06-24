@@ -5,6 +5,7 @@
 
 body {
   background-color: #eee;
+  margin-bottom: 30px;
 }
 
 .navbar-default {
@@ -17,7 +18,7 @@ body {
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   max-width: 330px;
   padding: 0 15px;
