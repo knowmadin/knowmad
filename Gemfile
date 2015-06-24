@@ -20,6 +20,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-html-matchers', '~> 0.7'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'timecop'

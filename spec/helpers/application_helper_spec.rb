@@ -26,7 +26,7 @@ describe ApplicationHelper do
     end
 
     it 'should work with a notice' do
-      allow(controller).to receive(:flash) { {notice: "Hello"} }
+      allow(controller).to receive(:flash) { {notice: 'Hello'} }
 
       element = helper.bootstrap_flash
 
@@ -64,9 +64,9 @@ describe ApplicationHelper do
     end
 
     it 'should work with a notice and an extra class and an extra attribute' do
-      allow(controller).to receive(:flash) { {notice: "Hello"} }
+      allow(controller).to receive(:flash) { {notice: 'Hello'} }
 
-      element = bootstrap_flash(class: 'extra-class', 'data-no-transition-cache' => true)
+      element = helper.bootstrap_flash(class: 'extra-class', 'data-no-transition-cache' => true)
 
       expect(element).to have_tag(:div,
           text: '×Hello',
