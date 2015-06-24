@@ -17,11 +17,6 @@ describe ApplicationHelper do
   end
 
   describe '#bootstrap_flash' do
-    before do
-      allow(controller).to receive(:uri_state) { :inactive }
-      allow(controller).to receive(:root_url) { '/' }
-    end
-
     it 'should not return anything without flashes' do
       allow(self).to receive(:flash) { {} }
 
@@ -33,7 +28,7 @@ describe ApplicationHelper do
     it 'should work with a notice' do
       allow(controller).to receive(:flash) { {notice: "Hello"} }
 
-      element = belper.bootstrap_flash
+      element = helper.bootstrap_flash
 
       expect(element).to have_tag(:div,
           text: '×Hello',
