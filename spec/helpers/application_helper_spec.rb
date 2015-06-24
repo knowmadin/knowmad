@@ -15,4 +15,79 @@ RSpec.describe ApplicationHelper, :type => :helper do
 
     after { Timecop.return }
   end
+
+  describe '#bootstrap_flash' do
+    before do
+      allow(helper).to receive(:uri_state) { :inactive }
+      allow(helper).to receive(:root_url) { '/' }
+    end
+
+    it 'should not return anything without flashes' do
+      allow(self).to receive(:flash) { {} }
+
+      element = helper.bootstrap_flash
+
+      expect(element).to eql('')
+    end
+
+    it 'should work with a notice' do
+      allow(helper).to receive(:flash) { {notice: "Hello"} }
+
+      element = belper.bootstrap_flash
+
+      expect(element).to have_tag(:div,
+          text: '×Hello',
+          with: {class: 'alert fade in alert-success'}) {
+
+          with_tag(:button,
+            text: '×',
+            with: {
+              class: 'close',
+              'data-dismiss' => 'alert'
+            }
+          )
+        }
+    end
+
+    it 'should work with a notice and an extra class' do
+      allow(helper).to receive(:flash) { {notice: 'Hello'} }
+
+      element = helper.bootstrap_flash(class: 'extra-class')
+
+      expect(element).to have_tag(:div,
+          text: '×Hello',
+          with: {class: 'alert fade in alert-success extra-class'}) {
+
+          with_tag(:button,
+            text: '×',
+            with: {
+              class: 'close',
+              'data-dismiss' => 'alert'
+            }
+          )
+        }
+    end
+
+    it 'should work with a notice and an extra class and an extra attribute' do
+      allow(helper).to receive(:flash) { {notice: "Hello"} }
+
+      element = bootstrap_flash(class: 'extra-class', 'data-no-transition-cache' => true)
+
+      expect(element).to have_tag(:div,
+          text: '×Hello',
+          with: {
+            class: 'alert fade in alert-success extra-class',
+            'data-no-transition-cache' => true
+          }) {
+
+          with_tag(:button,
+            text: '×',
+            with: {
+              class: 'close',
+              'data-dismiss' => 'alert'
+            }
+          )
+        }
+    end
+  end
 end

@@ -1,5 +1,5 @@
 module ApplicationHelper
-  ALERT_TYPES = [:success, :info, :warning, :danger] unless const_defined?(:ALERT_TYPES)
+  ALERT_TYPES = [:success, :info, :warning, :danger]
 
   # >> puts Benchmark.measure { Time.now.year }
   # 0.000000   0.000000   0.000000 (  0.000026)
