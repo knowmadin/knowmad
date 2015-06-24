@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'timecop'
 
-RSpec.describe ApplicationHelper, :type => :helper do
+describe ApplicationHelper do
   describe '#knowmad_copyright_footer_text' do
     before { Timecop.freeze }
 
