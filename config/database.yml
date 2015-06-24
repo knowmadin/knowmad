@@ -16,7 +16,8 @@ test:
 production:
   adapter: mysql2
   host: mysql
+  encoding: utf8
+  pool: 5
   database: knowmad_production
   username: <%= ENV['KNOWMAD_PRODUCTION_DATABASE_USERNAME'] %>
   username: <%= ENV['KNOWMAD_PRODUCTION_DATABASE_PASSWORD'] %>
-  database: knowmad_production
