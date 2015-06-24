@@ -20,4 +20,4 @@ production:
   pool: 5
   database: knowmad_production
   username: <%= ENV['KNOWMAD_PRODUCTION_DATABASE_USERNAME'] %>
-  username: <%= ENV['KNOWMAD_PRODUCTION_DATABASE_PASSWORD'] %>
+  password: <%= ENV['KNOWMAD_PRODUCTION_DATABASE_PASSWORD'] %>
