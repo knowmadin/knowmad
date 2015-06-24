@@ -11,6 +11,7 @@ gem 'unicorn-rails', '~> 2.2'
 gem 'redis', '~> 3.2'
 gem 'devise', '~> 3.5'
 gem 'omniauth', '~> 1.2'
+gem 'rubocop', require: false
 
 group :development do
   gem 'better_errors'
@@ -18,10 +19,10 @@ group :development do
 end
 
 group :development, :test do
-  gem 'rubocop', require: false
   gem 'rspec-rails', '~> 3.0'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'timecop'
+  gem 'mailcatcher'
 end
