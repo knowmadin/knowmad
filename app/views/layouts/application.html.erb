@@ -25,8 +25,6 @@
     <!-- For all other devices -->
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
-
-    <%= javascript_include_tag "application" %>
   </head>
   <body>
 
@@ -38,20 +36,26 @@
 
         <% if controller_name == 'home' %>
           <div class="input-group">
-            <input type="password" class="form-control" aria-label="Password input" placeholder="Password" tabindex="2">
-            <input type="email" class="form-control" aria-label="Email input" placeholder="Email" tabindex="1">
-            <div class="input-group-btn">
-              <button type="button" class="btn btn-default" tabindex="3">Sign in</button>
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="4">
-                <span class="caret"></span>
-                <span class="sr-only">Toggle Dropdown</span>
-              </button>
+            <%= form_for(:user, as: :user, url: session_path(:user)) do |f| %>
+              <%= f.label :email, class: 'sr-only' %>
+              <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email', tabindex: '2' %>
 
-              <ul class="dropdown-menu dropdown-menu-right">
-                <li><%= link_to "Sign up", new_registration_path(:user) %></li>
-                <li><%= link_to "Forgot your password?", new_password_path(:user) %></li>
-              </ul>
-            </div>
+              <%= f.label :password, class: 'sr-only'%>
+              <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password', tabindex: '1' %>
+
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-default" tabindex="3">Sign in</button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="4">
+                  <span class="caret"></span>
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li><%= link_to "Sign up", new_registration_path(:user) %></li>
+                  <li><%= link_to "Forgot your password?", new_password_path(:user) %></li>
+                </ul>
+              </div>
+            <% end %>
           </div>
         <% end %>
       </div>
@@ -68,5 +72,6 @@
     </div>
   </body>
 
+  <%= javascript_include_tag "application" %>
   <%= render 'layouts/google_analytics' %>
 </html>
