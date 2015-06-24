@@ -12,9 +12,11 @@ body {
   background-color: #428bca;
   border-color: #357ebd;
 
-  input {
-    width: 30%;
-    float: right;
+  .input-group {
+    .form-control {
+      width: 30%;
+      float: right;
+    }
   }
 
   .input-group-btn {
