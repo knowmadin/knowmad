@@ -18,6 +18,16 @@ body {
     .form-control {
       width: 20%;
       float: right;
+
+      &[type=email] {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+
+      &[type=password] {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+      }
     }
   }
 
