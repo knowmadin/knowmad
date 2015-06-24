@@ -36,7 +36,12 @@ body {
     margin-top: 5px;
 
     .btn {
+      margin-top: -1px;
       height: 38px;
+    }
+
+    .dropdown-menu {
+      margin-top: -1px;
     }
   }
 }
