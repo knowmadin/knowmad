@@ -9,6 +9,7 @@ rails:
   build: .
   ports:
     - "3000"
+    - "25:25"
   links:
    - mysql
    - redis
