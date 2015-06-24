@@ -18,8 +18,8 @@ describe ApplicationHelper do
 
   describe '#bootstrap_flash' do
     before do
-      allow(helper).to receive(:uri_state) { :inactive }
-      allow(helper).to receive(:root_url) { '/' }
+      allow(controller).to receive(:uri_state) { :inactive }
+      allow(controller).to receive(:root_url) { '/' }
     end
 
     it 'should not return anything without flashes' do
@@ -31,7 +31,7 @@ describe ApplicationHelper do
     end
 
     it 'should work with a notice' do
-      allow(helper).to receive(:flash) { {notice: "Hello"} }
+      allow(controller).to receive(:flash) { {notice: "Hello"} }
 
       element = belper.bootstrap_flash
 
@@ -50,7 +50,7 @@ describe ApplicationHelper do
     end
 
     it 'should work with a notice and an extra class' do
-      allow(helper).to receive(:flash) { {notice: 'Hello'} }
+      allow(controller).to receive(:flash) { {notice: 'Hello'} }
 
       element = helper.bootstrap_flash(class: 'extra-class')
 
@@ -69,7 +69,7 @@ describe ApplicationHelper do
     end
 
     it 'should work with a notice and an extra class and an extra attribute' do
-      allow(helper).to receive(:flash) { {notice: "Hello"} }
+      allow(controller).to receive(:flash) { {notice: "Hello"} }
 
       element = bootstrap_flash(class: 'extra-class', 'data-no-transition-cache' => true)
 
