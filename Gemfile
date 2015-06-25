@@ -19,6 +19,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'mailcatcher'
   gem 'rubocop', require: false
   gem 'rspec-rails', '~> 3.0'
   gem 'rspec-html-matchers', '~> 0.7'
