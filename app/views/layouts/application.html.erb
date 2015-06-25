@@ -57,6 +57,8 @@
               </div>
             </div>
           <% end %>
+        <% elsif !user_signed_in? %>
+          <%= link_to "Log out", destroy_user_session_path(user) %>
         <% end %>
       </div>
     </div>
