@@ -1,13 +1,5 @@
 #home {
-  background: url(home-sand.png) 50% 0 repeat fixed; min-height: 1000px;
-}
-
-#about {
-  background: url(home-tracks.png) 50% 0 no-repeat min-height: 1000px;
-}
-
-#home {
-  background: url(home-bg.jpg) 50% 0 repeat fixed; min-height: 1000px;
+  background: image-url(home-sand.png) 50% 0 repeat fixed; min-height: 1000px;
   height: 1000px;
   margin: 0 auto;
   width: 100%;
@@ -24,7 +16,7 @@
 }
 
 #about {
-  background: url(about-bg.jpg) 50% 0 repeat fixed; min-height: 1000px;
+  background: image-url(home-tracks.png) 50% 0 repeat fixed; min-height: 1000px;
   height: 1000px;
   margin: 0 auto;
   width: 100%;
