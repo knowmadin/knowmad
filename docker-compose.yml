@@ -9,7 +9,7 @@ mysql:
 mysqlslave:
   image: tutum/mysql
   ports:
-    - "3307:3306"
+    - "3307:3307"
   environment:
     - MYSQL_PASS=admin
     - REPLICATION_SLAVE=true

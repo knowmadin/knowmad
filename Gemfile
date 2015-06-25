@@ -14,12 +14,12 @@ gem 'omniauth', '~> 1.2'
 gem 'resque', '~> 1.25'
 
 group :development do
+  gem 'mailcatcher'
   gem 'better_errors'
   gem 'binding_of_caller'
 end
 
 group :development, :test do
-  gem 'mailcatcher'
   gem 'rubocop', require: false
   gem 'rspec-rails', '~> 3.0'
   gem 'rspec-html-matchers', '~> 0.7'

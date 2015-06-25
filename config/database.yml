@@ -1,8 +1,7 @@
-development: &default
+development:
   adapter: mysql2
   encoding: utf8
   database: knowmad_development
-  pool: 5
   username: admin
   password: admin
   host: mysql
