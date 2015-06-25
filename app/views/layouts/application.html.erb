@@ -4,11 +4,7 @@
 
   <body>
     <%= render 'layouts/navbar' %>
-
-    <div class="container">
-      <%= bootstrap_flash %>
-      <%= yield %>
-    </div>
+    <%= yield %>
   </body>
 
   <%= render 'layouts/google_analytics' %>

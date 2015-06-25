@@ -1,21 +1,25 @@
-<%= form_for(resource,
-  as: resource_name,
-  url: confirmation_path(resource_name),
-  html: {
-    method: :post,
-    class: 'form-auth new-confirmation'
-  }) do |f| %>
-  <h2>Resend confirmation email</h2>
+<div class="container">
+  <%= bootstrap_flash %>
 
-  <%= f.label :email, class: 'sr-only' %>
-  <%= f.email_field :email,
-    autofocus: true,
-    value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
-    class: 'form-control',
-    placeholder: 'Email address'
-  %>
+  <%= form_for(resource,
+    as: resource_name,
+    url: confirmation_path(resource_name),
+    html: {
+      method: :post,
+      class: 'form-auth new-confirmation'
+    }) do |f| %>
+    <h2>Resend confirmation email</h2>
 
-  <%= f.submit "Resend confirmation email", class: 'btn btn-lg btn-primary btn-block' %>
+    <%= f.label :email, class: 'sr-only' %>
+    <%= f.email_field :email,
+      autofocus: true,
+      value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
+      class: 'form-control',
+      placeholder: 'Email address'
+    %>
 
-  <%= render "devise/shared/links" %>
-<% end %>
+    <%= f.submit "Resend confirmation email", class: 'btn btn-lg btn-primary btn-block' %>
+
+    <%= render "devise/shared/links" %>
+  <% end %>
+</div>

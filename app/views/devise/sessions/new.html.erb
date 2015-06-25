@@ -1,24 +1,28 @@
-<%= form_for(resource,
-  as: resource_name,
-  url: session_path(resource_name),
-  html: {
-    class: 'form-auth'
-  }) do |f| %>
-  <h2 class="form-auth-heading">Please sign in</h2>
+<div class="container">
+  <%= bootstrap_flash %>
 
-  <%= f.label :email, class: 'sr-only' %>
-  <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email address' %>
+  <%= form_for(resource,
+    as: resource_name,
+    url: session_path(resource_name),
+    html: {
+      class: 'form-auth'
+    }) do |f| %>
+    <h2 class="form-auth-heading">Please sign in</h2>
 
-  <%= f.label :password, class: 'sr-only'%>
-  <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password' %>
+    <%= f.label :email, class: 'sr-only' %>
+    <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email address' %>
 
-  <div class="checkbox">
-    <label>
-      <%= f.check_box :remember_me %> Remember me
-    </label>
-  </div>
+    <%= f.label :password, class: 'sr-only'%>
+    <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password' %>
 
-  <%= f.submit 'Sign in', class: 'btn btn-lg btn-primary btn-block' %>
+    <div class="checkbox">
+      <label>
+        <%= f.check_box :remember_me %> Remember me
+      </label>
+    </div>
 
-  <%= render 'devise/shared/links' %>
-<% end %>
+    <%= f.submit 'Sign in', class: 'btn btn-lg btn-primary btn-block' %>
+
+    <%= render 'devise/shared/links' %>
+  <% end %>
+</div>

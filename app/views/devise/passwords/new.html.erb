@@ -1,16 +1,20 @@
-<%= form_for(resource,
-  as: resource_name,
-  url: password_path(resource_name),
-  html: {
-    method: :post,
-    class: 'form-auth forgot-pass'
-  }) do |f| %>
-  <h2>Forgot your password?</h2>
+<div class="container">
+  <%= bootstrap_flash %>
 
-  <%= f.label :email, class: 'sr-only' %>
-  <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email address' %>
+  <%= form_for(resource,
+    as: resource_name,
+    url: password_path(resource_name),
+    html: {
+      method: :post,
+      class: 'form-auth forgot-pass'
+    }) do |f| %>
+    <h2>Forgot your password?</h2>
 
-  <%= f.submit "Send me reset password email", class: 'btn btn-lg btn-primary btn-block' %>
+    <%= f.label :email, class: 'sr-only' %>
+    <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email address' %>
 
-  <%= render "devise/shared/links" %>
-<% end %>
+    <%= f.submit "Send me reset password email", class: 'btn btn-lg btn-primary btn-block' %>
+
+    <%= render "devise/shared/links" %>
+  <% end %>
+</div>
