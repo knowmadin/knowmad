@@ -58,7 +58,7 @@
             </div>
           <% end %>
         <% elsif !user_signed_in? %>
-          <%= link_to "Log out", destroy_session_path(:user), method: :delete %>
+          <%= link_to "Log out", destroy_session_path(:user), method: :delete, class: 'pull-right btn btn-default log-out' %>
         <% end %>
       </div>
     </div>
