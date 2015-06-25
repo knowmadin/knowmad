@@ -1,0 +1,59 @@
+mysql:
+  image: tutum/mysql
+  ports:
+    - "3306:3306"
+  volumes:
+    - /db/master:/var/lib/mysql
+  environment:
+    - MYSQL_PASS=admin
+    - REPLICATION_MASTER=true
+
+mysqlslave:
+  image: tutum/mysql
+  ports:
+    - "3307:3307"
+  volumes:
+    - /db/slave:/var/lib/mysql
+  environment:
+    - MYSQL_PASS=admin
+    - REPLICATION_SLAVE=true
+  links:
+    - mysql
+
+rails:
+  build: .
+  ports:
+    - "3000"
+  links:
+    - redis
+    - mysql
+    - mysqlslave
+
+mailcatcher:
+  image: schickling/mailcatcher
+  ports:
+    - "1080:1080"
+
+resque:
+  build: .
+  links:
+    - mysql
+    - mysqlslave
+    - redis
+    - mailcatcher
+  environment:
+    - QUEUE=*
+  command: rake environment resque:work
+
+redis:
+  image: redis
+
+nginx:
+  build: ./lib/docker_images/nginx
+  ports:
+    - "80:80"
+    - "443:443"
+  links:
+    - rails
+    - mailcatcher
+    - resque

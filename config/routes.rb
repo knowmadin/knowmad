@@ -1,4 +1,9 @@
+require 'resque_web'
+ResqueWeb::Engine.eager_load!
+
 Rails.application.routes.draw do
+  mount ResqueWeb::Engine => '/resque_web'
+
   root to: 'home#index'
 
   devise_for :users,
@@ -14,5 +19,4 @@ Rails.application.routes.draw do
       sessions:      'users/sessions',
       passwords:     'users/passwords'
     }
-
 end

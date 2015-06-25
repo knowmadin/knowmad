@@ -16,4 +16,4 @@
 !/log/.keep
 /tmp
 
-/docker-compose.production.yml
+/docker-compose.prod.yml
