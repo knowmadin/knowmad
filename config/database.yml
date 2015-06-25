@@ -5,7 +5,7 @@ development: &default
   pool: 5
   username: admin
   password: admin
-  host: mysql
+  host: mysqlmaster
 
 test:
   adapter: mysql2
