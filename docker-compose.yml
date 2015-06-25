@@ -1,9 +1,20 @@
-mysql:
+mysql_master:
   image: tutum/mysql
   ports:
     - "3306:3306"
   environment:
     - MYSQL_PASS=admin
+    - REPLICATION_MASTER=true
+    - REPLICATION_USER=admin
+    - REPLICATION_PASS=admin
+
+mysql_slave:
+  image: tutum/mysql
+  ports:
+    - "3307:3306"
+  environment:
+    - MYSQL_PASS=admin
+    - REPLICATION_SLAVE=true
 
 rails:
   build: .
@@ -28,7 +39,7 @@ redis:
   image: redis
 
 nginx:
-  build: ./nginx
+  build: ./lib/docker_images/nginx
   links:
     - rails
   ports:
