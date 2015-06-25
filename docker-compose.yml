@@ -13,6 +13,8 @@ mysqlslave:
   environment:
     - MYSQL_PASS=admin
     - REPLICATION_SLAVE=true
+  links:
+    - mysqlmaster
 
 rails:
   build: .
