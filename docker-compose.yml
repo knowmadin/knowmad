@@ -1,4 +1,4 @@
-mysqlmaster:
+mysql:
   image: tutum/mysql
   ports:
     - "3306:3306"
@@ -14,7 +14,7 @@ mysqlslave:
     - MYSQL_PASS=admin
     - REPLICATION_SLAVE=true
   links:
-    - mysqlmaster
+    - mysql
 
 rails:
   build: .
@@ -22,13 +22,13 @@ rails:
     - "3000"
     - "1080"
   links:
-    - mysqlmaster
+    - mysql
     - mysqlslave
 
 resque:
   build: .
   links:
-    - mysqlmaster
+    - mysql
     - mysqlslave
     - redis
   ports:
