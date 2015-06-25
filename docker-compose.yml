@@ -1,4 +1,4 @@
-mysql_master:
+mysqlmaster:
   image: tutum/mysql
   ports:
     - "3306:3306"
@@ -8,7 +8,7 @@ mysql_master:
     - REPLICATION_USER=admin
     - REPLICATION_PASS=admin
 
-mysql_slave:
+mysqlslave:
   image: tutum/mysql
   ports:
     - "3307:3306"
