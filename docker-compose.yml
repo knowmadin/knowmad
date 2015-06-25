@@ -22,7 +22,7 @@ resque:
     - "5678"
   environment:
     - QUEUE=*
-  command: rake environment resque:work ;  rake environment resque:scheduler
+  command: rake environment resque:work
 
 redis:
   image: redis

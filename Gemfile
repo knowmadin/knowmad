@@ -12,7 +12,6 @@ gem 'redis', '~> 3.2'
 gem 'devise', '~> 3.5'
 gem 'omniauth', '~> 1.2'
 gem 'resque', '~> 1.25'
-gem 'resque-scheduler', '~> 4.0'
 
 group :development do
   gem 'better_errors'
