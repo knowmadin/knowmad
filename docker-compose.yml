@@ -18,7 +18,9 @@ resque:
   links:
     - mysql
     - redis
-  command: "QUEUE=* rake environment resque:work ; rake environment resque:scheduler"
+  environment:
+    - QUEUE=*
+  command: rake environment resque:work ;  rake environment resque:scheduler
 
 redis:
   image: redis
