@@ -46,6 +46,11 @@ body {
     .btn {
       margin-top: -1px;
       height: 38px;
+
+      &:hover {
+        margin-top: 0px;
+        height: 37px;
+      }
     }
 
     .dropdown-menu {
