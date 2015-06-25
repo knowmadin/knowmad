@@ -1,0 +1,34 @@
+<div class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <a href="<%= root_path %>" class="navbar-brand">
+      <%= image_tag "logo.png" %>
+    </a>
+
+    <% if controller_name == 'home' && !user_signed_in? %>
+      <%= form_for(:user, as: :user, url: session_path(:user)) do |f| %>
+        <div class="input-group">
+          <%= f.label :password, class: 'sr-only'%>
+          <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password', tabindex: '2' %>
+
+          <%= f.label :email, class: 'sr-only' %>
+          <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email', tabindex: '1' %>
+
+          <div class="input-group-btn">
+            <button type="submit" class="btn btn-default" tabindex="3">Sign in</button>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="4">
+              <span class="caret"></span>
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><%= link_to "Sign up", new_registration_path(:user) %></li>
+              <li><%= link_to "Forgot your password?", new_password_path(:user) %></li>
+            </ul>
+          </div>
+        </div>
+      <% end %>
+    <% elsif user_signed_in? %>
+      <%= link_to "Log out", destroy_session_path(:user), method: :delete, class: 'pull-right btn btn-default log-out' %>
+    <% end %>
+  </div>
+</div>
