@@ -11,8 +11,9 @@ rails:
     - "3000"
     - "1080:1080"
   links:
-   - mysql
-   - redis
+    - mysql
+    - redis
+  command: rails s
 
 redis:
   image: redis
