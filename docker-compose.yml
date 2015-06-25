@@ -22,14 +22,14 @@ rails:
     - "3000"
     - "1080"
   links:
-    - mysql_master
-    - mysql_slave
+    - mysqlmaster
+    - mysqlslave
 
 resque:
   build: .
   links:
-    - mysql_master
-    - mysql_slave
+    - mysqlmaster
+    - mysqlslave
     - redis
   ports:
     - "5678"
