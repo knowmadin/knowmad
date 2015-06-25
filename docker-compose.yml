@@ -5,8 +5,6 @@ mysqlmaster:
   environment:
     - MYSQL_PASS=admin
     - REPLICATION_MASTER=true
-    - REPLICATION_USER=admin
-    - REPLICATION_PASS=admin
 
 mysqlslave:
   image: tutum/mysql
