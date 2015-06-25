@@ -4,9 +4,8 @@
   html: {
     class: 'form-auth form-sign-up'
   }) do |f| %>
-  <%= devise_error_messages! %>
-
   <h2 class="form-auth-heading">Sign up</h2>
+
   <%= f.label :email, class: 'sr-only' %>
   <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email address' %>
 

@@ -5,7 +5,6 @@
     method: :put,
     class: 'form-auth form-sign-up'
   }) do |f| %>
-  <%= devise_error_messages! %>
   <%= f.hidden_field :reset_password_token %>
 
   <h2>Change your password</h2>

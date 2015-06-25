@@ -5,8 +5,6 @@
     method: :post,
     class: 'form-auth new-confirmation'
   }) do |f| %>
-  <%= devise_error_messages! %>
-
   <h2>Resend confirmation email</h2>
 
   <%= f.label :email, class: 'sr-only' %>

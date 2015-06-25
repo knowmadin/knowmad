@@ -9,7 +9,10 @@ Rails.application.routes.draw do
       registration: 'account'
     },
     controllers: {
-      registrations: 'users/registrations'
+      registrations: 'users/registrations',
+      confirmations: 'users/confirmations',
+      sessions:      'users/sessions',
+      passwords:     'users/passwords'
     }
 
 end
