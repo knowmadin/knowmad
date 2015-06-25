@@ -9,10 +9,16 @@ rails:
   build: .
   ports:
     - "3000"
-    - "1080:1080"
   links:
     - mysql
     - redis
+
+resque:
+  build: .
+  links:
+    - mysql
+    - redis
+  command: "QUEUE=* rake environment resque:work ; rake environment resque:scheduler"
 
 redis:
   image: redis
