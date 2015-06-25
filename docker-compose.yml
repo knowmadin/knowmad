@@ -13,7 +13,6 @@ rails:
   links:
     - mysql
     - redis
-  command: rails s
 
 redis:
   image: redis

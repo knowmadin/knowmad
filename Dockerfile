@@ -1,1 +1,1 @@
-FROM rails:4.2.2
+FROM rails:onbuild
