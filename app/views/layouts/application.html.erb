@@ -34,7 +34,7 @@
           <%= image_tag "logo.png" %>
         </a>
 
-        <% if controller_name == 'home' %>
+        <% if controller_name == 'home' && user_signed_in? %>
           <%= form_for(:user, as: :user, url: session_path(:user)) do |f| %>
             <div class="input-group">
               <%= f.label :password, class: 'sr-only'%>
