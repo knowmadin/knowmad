@@ -1,4 +1,14 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
+$(document).ready(function(){
+  $('section[data-type="background"]').each(function(){
+    var $backgroundObject = $(this),
+      $window = $(window);
 
-$('.carousel').carousel();
+    $window.scroll(function() {
+      var yPos = -($window.scrollTop() / $backgroundObject.data('speed'));
+
+      var coordinates = '50% '+ yPos + 'px';
+
+      $backgroundObject.css({ backgroundPosition: coordinates });
+    });
+  });
+});
