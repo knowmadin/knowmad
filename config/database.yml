@@ -5,18 +5,20 @@ development:
   username: admin
   password: admin
   host: mysql
+  pool: 5
 
 test:
   adapter: mysql2
+  encoding: utf8
   database: knowmad_test
   username: travis
-  encoding: utf8
 
 production:
   adapter: mysql2
-  host: mysql
   encoding: utf8
-  pool: 5
+  host: mysql
   database: knowmad_production
   username: <%= ENV['KNOWMAD_PRODUCTION_DATABASE_USER_NAME'] %>
   password: <%= ENV['KNOWMAD_PRODUCTION_DATABASE_PASSWORD'] %>
+  pool: 5
+
