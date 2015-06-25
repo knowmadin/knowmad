@@ -34,7 +34,7 @@
           <%= image_tag "logo.png" %>
         </a>
 
-        <% if controller_name == 'home' && user_signed_in? %>
+        <% if controller_name == 'home' && !user_signed_in? %>
           <%= form_for(:user, as: :user, url: session_path(:user)) do |f| %>
             <div class="input-group">
               <%= f.label :password, class: 'sr-only'%>
@@ -57,7 +57,7 @@
               </div>
             </div>
           <% end %>
-        <% elsif !user_signed_in? %>
+        <% elsif user_signed_in? %>
           <%= link_to "Log out", destroy_session_path(:user), method: :delete, class: 'pull-right btn btn-default log-out' %>
         <% end %>
       </div>
