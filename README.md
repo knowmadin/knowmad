@@ -4,4 +4,6 @@
 
 ### Knowmad
 
+Side project I'm working on very BETA
+
 https://www.knowmad.in
