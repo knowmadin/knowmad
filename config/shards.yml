@@ -5,22 +5,39 @@ octopus:
     - development
     - production
   development:
+    master:
+      adapter: mysql2
+      encoding: utf8
+      database: knowmad_development
+      username: admin
+      password: admin
+      host: mysql
+      pool: 5
     slave:
       adapter: mysql2
       encoding: utf8
       reconnect: true
       database: knowmad_development
-      pool: 5
       username: admin
       password: admin
       host: mysqlslave
+      pool: 5
+
   production:
+    master:
+      adapter: mysql2
+      encoding: utf8
+      database: knowmad_production
+      username: <%= ENV['KNOWMAD_PRODUCTION_DATABASE_USER'] %>
+      password: <%= ENV['KNOWMAD_PRODUCTION_DATABASE_PASS'] %>
+      host: mysql
+      pool: 5
     slave:
       adapter: mysql2
       encoding: utf8
       reconnect: true
       database: knowmad_production
       pool: 5
-      username: admin
-      password: admin
+      username: <%= ENV['SLAVE_USER'] %>
+      password: <%= ENV['SLAVE_PASS'] %>
       host: mysqlslave

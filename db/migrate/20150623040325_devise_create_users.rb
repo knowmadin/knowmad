@@ -1,4 +1,6 @@
 class DeviseCreateUsers < ActiveRecord::Migration
+  using(:master, :slave)
+
   def change
     create_table(:users) do |t|
       ## Database authenticatable

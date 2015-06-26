@@ -18,7 +18,7 @@ production:
   encoding: utf8
   host: mysql
   database: knowmad_production
-  username: <%= ENV['KNOWMAD_PRODUCTION_DATABASE_USER_NAME'] %>
-  password: <%= ENV['KNOWMAD_PRODUCTION_DATABASE_PASSWORD'] %>
+  username: <%= ENV['KNOWMAD_PRODUCTION_DATABASE_USER'] %>
+  password: <%= ENV['KNOWMAD_PRODUCTION_DATABASE_PASS'] %>
   pool: 5
 
