@@ -2,7 +2,7 @@
 .env
 tmp
 log
-test
+spec
 .bundle
 
 public/assets
