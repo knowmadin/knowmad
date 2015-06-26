@@ -2,6 +2,8 @@ mysql:
   build: ./lib/docker_images/mysql
   ports:
     - "3306:3306"
+  volumes:
+    - /db/master:/var/lib/mysql
   environment:
     - MYSQL_PASS=admin
     - REPLICATION_MASTER=true
@@ -13,8 +15,11 @@ mysqlslave:
   build: ./lib/docker_images/mysql
   ports:
     - "3307:3307"
+  volumes:
+    - /db/slave:/var/lib/mysql
   environment:
     - MYSQL_PASS=admin
+    - ON_CREATE_DB=knowmad_development
     - REPLICATION_SLAVE=true
   links:
     - mysql
