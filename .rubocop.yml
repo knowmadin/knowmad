@@ -3,6 +3,7 @@ AllCops:
     - 'db/migrate/*'
     - 'Rakefile'
   Exclude:
+    - 'db/schema.rb'
     - 'bin/**/*'
     - 'vendor/**/*'
 
@@ -60,3 +61,10 @@ Style/SpaceAroundOperators:
 
 Style/SpaceInsideHashLiteralBraces:
   EnforcedStyle: no_space
+
+Style/IndentHash:
+  Enabled: False
+
+CaseIndentation:
+  IndentWhenRelativeTo: end
+  IndentOneStep: false

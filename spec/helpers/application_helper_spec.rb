@@ -31,9 +31,8 @@ describe ApplicationHelper do
       element = helper.bootstrap_flash
 
       expect(element).to have_tag(:div,
-          text: '×Hello',
-          with: {class: 'alert fade in alert-success'}) {
-
+        text: '×Hello',
+        with: {class: 'alert fade in alert-success'}) {
           with_tag(:button,
             text: '×',
             with: {
@@ -50,9 +49,8 @@ describe ApplicationHelper do
       element = helper.bootstrap_flash(class: 'extra-class')
 
       expect(element).to have_tag(:div,
-          text: '×Hello',
-          with: {class: 'alert fade in alert-success extra-class'}) {
-
+        text: '×Hello',
+        with: {class: 'alert fade in alert-success extra-class'}) {
           with_tag(:button,
             text: '×',
             with: {
@@ -69,12 +67,11 @@ describe ApplicationHelper do
       element = helper.bootstrap_flash(class: 'extra-class', 'data-no-transition-cache' => true)
 
       expect(element).to have_tag(:div,
-          text: '×Hello',
-          with: {
-            class: 'alert fade in alert-success extra-class',
-            'data-no-transition-cache' => true
-          }) {
-
+        text: '×Hello',
+        with: {
+          class: 'alert fade in alert-success extra-class',
+          'data-no-transition-cache' => true
+        }) {
           with_tag(:button,
             text: '×',
             with: {
