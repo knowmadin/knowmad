@@ -19,5 +19,5 @@ notifications:
     on_failure: change
 
 script:
-  - rspec
-  - rubocop
+  - bundle exec rspec
+  - bundle exec rubocop
