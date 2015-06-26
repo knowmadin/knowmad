@@ -1,0 +1,26 @@
+octopus:
+  replicated: true
+  fully_replicated: true
+  environments:
+    - development
+    - production
+  development:
+    slave:
+      adapter: mysql2
+      encoding: utf8
+      reconnect: true
+      database: knowmad_development
+      pool: 5
+      username: admin
+      password: admin
+      host: mysqlslave
+  production:
+    slave:
+      adapter: mysql2
+      encoding: utf8
+      reconnect: true
+      database: knowmad_production
+      pool: 5
+      username: admin
+      password: admin
+      host: mysqlslave
