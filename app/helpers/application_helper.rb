@@ -32,12 +32,14 @@ module ApplicationHelper
   end
 
   def normalized_type(type)
-    normalized_type = case type
+    normalized_type = case type = type.to_sym
     when :notice then :success
     when :alert  then :danger
     when :error  then :danger
+    else
+      type
     end
 
-    normalized_type if ALERT_TYPES.include?(type)
+    normalized_type if ALERT_TYPES.include?(normalized_type)
   end
 end
