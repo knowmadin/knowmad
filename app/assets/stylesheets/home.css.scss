@@ -1,31 +1,31 @@
-#home {
+.home {
   background: image-url('home-sand.jpg') 50% 0 repeat fixed; min-height: 1000px;
   margin: -20px auto 0;
   width: 100%;
   position: relative;
+
+  article {
+    height: 458px;
+    position: absolute;
+    text-align: center;
+    top: 150px;
+    width: 100%;
+  }
 }
 
-#home article {
-  height: 458px;
-  position: absolute;
-  text-align: center;
-  top: 150px;
-  width: 100%;
-}
-
-#about {
+.about {
   background: image-url('home-tracks.jpg') 50% 0 repeat fixed; min-height: 1000px;
   margin: 0 auto;
   width: 100%;
   position: relative;
   -webkit-box-shadow: 0 0 50px rgba(0,0,0,0.8);
   box-shadow: 0 0 50px rgba(0,0,0,0.8);
-}
 
-#about article {
-  height: 458px;
-  position: absolute;
-  text-align: center;
-  top: 150px;
-  width: 100%;
+  article {
+    height: 458px;
+    position: absolute;
+    text-align: center;
+    top: 150px;
+    width: 100%;
+  }
 }
