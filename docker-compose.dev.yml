@@ -1,13 +1,16 @@
 mysql:
-  image: tutum/mysql
+  build: ./lib/docker_images/mysql
   ports:
     - "3306:3306"
   environment:
     - MYSQL_PASS=admin
     - REPLICATION_MASTER=true
+    - REPLICATION_USER=repl
+    - REPLICATION_PASS=repl
+    - ON_CREATE_DB=knowmad_development
 
 mysqlslave:
-  image: tutum/mysql
+  build: ./lib/docker_images/mysql
   ports:
     - "3307:3307"
   environment:
