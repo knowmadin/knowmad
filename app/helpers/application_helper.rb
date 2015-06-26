@@ -8,7 +8,6 @@ module ApplicationHelper
     "&copy; Knowmad #{Time.now.year}".html_safe
   end
 
-  # stolen from bootstrap rails
   def bootstrap_flash(options = {})
     flash_messages = []
     flash.each do |type, message|
@@ -30,6 +29,8 @@ module ApplicationHelper
     end
     flash_messages.join("\n").html_safe
   end
+
+  private
 
   def normalized_type(type)
     normalized_type = case type = type.to_sym
