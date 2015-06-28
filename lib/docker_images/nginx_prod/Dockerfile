@@ -9,4 +9,5 @@ COPY nginx.conf  /etc/nginx/nginx.conf
 
 RUN mkdir /etc/nginx/ssl
 
-COPY nginx.crt /etc/nginx/ssl/nginx.crt
+COPY bundle.cer /etc/nginx/ssl/bundle.cer
+COPY bundle.cer /etc/nginx/ssl/key.pem
