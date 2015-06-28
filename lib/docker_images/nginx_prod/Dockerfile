@@ -20,11 +20,11 @@ VOLUME ["/var/cache/nginx"]
 
 EXPOSE 80 443
 
-CMD ["nginx", "-g", "daemon off;", "--with-http_stub_status_module"]
+CMD ["nginx", "-g", "daemon off;"]
 
 COPY ./nginx.conf /etc/nginx/nginx.conf
 
 RUN mkdir /etc/nginx/ssl
 
 COPY bundle.cer /etc/nginx/ssl/bundle.cer
-COPY bundle.cer /etc/nginx/ssl/key.pem
+COPY key.pem /etc/nginx/ssl/key.pem
