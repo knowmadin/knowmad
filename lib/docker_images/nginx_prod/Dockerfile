@@ -8,4 +8,5 @@ MAINTAINER Anand Mani Sankar
 COPY nginx.conf  /etc/nginx/nginx.conf
 
 RUN mkdir /etc/nginx/ssl
-RUN openssl req -nodes -x509 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt -days 356 -subj '/CN=www.knowmad.in'
+
+COPY nginx.crt /etc/nginx/ssl/nginx.crt
