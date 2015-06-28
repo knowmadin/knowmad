@@ -15,6 +15,7 @@ gem 'resque', '~> 1.25'
 gem 'resque-web', '~> 0.0' ,require: 'resque_web'
 gem 'ar-octopus', '~> 0.8'
 gem 'rollbar', '~> 1.5.3'
+gem 'resque-rollbar', '~> 0.3'
 
 group :development do
   gem 'mailcatcher'
