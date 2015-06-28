@@ -17,4 +17,5 @@
 /tmp
 
 /docker-compose.prod.yml
-/lib/docker_images/nginx_prod/nginx.crt
+/lib/docker_images/nginx_prod/bundle.cer
+/lib/docker_images/nginx_prod/key.pem
