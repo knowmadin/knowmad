@@ -14,6 +14,7 @@ gem 'omniauth', '~> 1.2'
 gem 'resque', '~> 1.25'
 gem 'resque-web', '~> 0.0' ,require: 'resque_web'
 gem 'ar-octopus', '~> 0.8'
+gem 'capistrano', '~> 3.4.0'
 
 group :development do
   gem 'mailcatcher'
