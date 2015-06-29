@@ -52,6 +52,9 @@ resque:
 redis:
   image: redis
 
+memcached:
+  image: memcached
+
 nginx:
   build: ./lib/docker_images/nginx
   ports:
