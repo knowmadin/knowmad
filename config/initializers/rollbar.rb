@@ -6,7 +6,7 @@ Rollbar.configure do |config|
   config.enabled = false if Rails.env.test?
 
   config.use_resque
-  config.use_resque :queue => 'rollbar'
+  config.use_resque queue: 'rollbar'
   # By default, Rollbar will try to call the `current_user` controller method
   # to fetch the logged-in user object, and then call that object's `id`,
   # `username`, and `email` methods to fetch those properties. To customize:
