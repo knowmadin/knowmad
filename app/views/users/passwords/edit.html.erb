@@ -12,13 +12,13 @@
 
     <h2>Change your password</h2>
 
-    <%= f.label :password, "New password", class: 'sr-only' %>
+    <%= f.label :password, 'New password', class: 'sr-only' %>
     <%= f.password_field :password, autofocus: true, autocomplete: 'off', class: 'form-control', placeholder: "Password (#{@minimum_password_length} characters minimum)" %>
     <%= f.label :password_confirmation, 'Confirm new password', class: 'sr-only' %><br />
     <%= f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control', placeholder: 'Confirm password' %>
 
     <%= f.submit 'Change my password', class: 'btn btn-lg btn-primary btn-block' %>
 
-    <%= render "devise/shared/links" %>
+    <%= render 'users/shared/links' %>
   <% end %>
 </div>
