@@ -49,6 +49,8 @@ CreateMySQLUser()
 
 	mysql -uroot -e "CREATE USER '${MYSQL_USER}'@'%' IDENTIFIED BY '$PASS'"
 	mysql -uroot -e "GRANT ALL PRIVILEGES ON *.* TO '${MYSQL_USER}'@'%' WITH GRANT OPTION"
+  mysql -uroot -e "GRANT REPLICATION SLAVE ON *.* TO '${DATADOG_USER}'@'%' IDENTIFIED BY '${DATADOG_PASS}'"
+
 	echo "=> Done!"
 	echo "========================================================================"
 	echo "You can now connect to this MySQL Server using:"
