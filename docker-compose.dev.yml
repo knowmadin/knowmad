@@ -52,7 +52,7 @@ resque:
 redis:
   image: redis
 
-memcached:
+cache:
   image: memcached
 
 nginx:
