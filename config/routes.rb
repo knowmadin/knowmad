@@ -12,10 +12,10 @@ Rails.application.routes.draw do
       registration: 'account'
     },
     controllers: {
-      registrations: 'users/registrations',
-      confirmations: 'users/confirmations',
-      sessions:      'users/sessions',
-      passwords:     'users/passwords',
+      registrations:      'users/registrations',
+      confirmations:      'users/confirmations',
+      sessions:           'users/sessions',
+      passwords:          'users/passwords',
       omniauth_callbacks: 'users/omniauth_callbacks'
     }
 end
