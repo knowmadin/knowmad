@@ -17,6 +17,7 @@ gem 'ar-octopus', '~> 0.8'
 gem 'rollbar', '~> 1.5.3'
 gem 'resque-rollbar', '~> 0.3'
 gem 'dalli', '~> 2.7'
+gem 'omniauth-facebook', '~> 2.0'
 
 group :development do
   gem 'mailcatcher'
