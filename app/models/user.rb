@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :confirmable,
-    :omniauthable
+    :omniauthable, omniauth_providers: [:facebook]
 
   # override users method, so that enqueue all smpt calls instead of sending them now
   def send_devise_notification(notification, *args)
