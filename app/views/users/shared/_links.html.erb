@@ -1,8 +1,14 @@
 <div class="links">
   <%- if devise_mapping.omniauthable? %>
-    <%- resource_class.omniauth_providers.each do |provider| %>
-      <%= link_to nil, user_omniauth_authorize_path(provider), class: omniauth_provider_button_class(provider) %><br />
-    <% end -%>
+    <div class="container-fluid">
+      <div class="row">
+        <%- resource_class.omniauth_providers.each do |provider| %>
+          <div class="col-sm-4">
+            <%= link_to '', user_omniauth_authorize_path(provider), class: omniauth_provider_button_class(provider) %>
+          </div>
+        <% end -%>
+      </div>
+    </div>
   <% end -%>
 
   <%- if controller_name != 'sessions' %>
