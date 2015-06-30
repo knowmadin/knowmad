@@ -1,4 +1,4 @@
-class Users::RegistrationsController < Devise::RegistrationsController
+class Users::EmailIdentitiesController < Devise::RegistrationsController
   def create
     super do |resource|
       if resource.errors.any?

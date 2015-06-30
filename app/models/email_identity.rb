@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class EmailIdentity < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :confirmable,
     :omniauthable, omniauth_providers: [:facebook, :twitter, :google_oauth2]
 

@@ -5,7 +5,7 @@
     </a>
 
     <% if controller_name == 'home' && !user_signed_in? %>
-      <%= form_for(:user, as: :user, url: session_path(:user)) do |f| %>
+      <%= form_for(:user_identity, as: :user_identity, url: session_path(:user_identity)) do |f| %>
         <div class="input-group">
           <%= f.label :password, class: 'sr-only'%>
           <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password', tabindex: '2' %>
@@ -28,7 +28,7 @@
         </div>
       <% end %>
     <% elsif user_signed_in? %>
-      <%= link_to "Log out", destroy_session_path(:user), method: :delete, class: 'pull-right btn btn-default log-out' %>
+      <%= link_to "Log out", destroy_session_path(:user_identity), method: :delete, class: 'pull-right btn btn-default log-out' %>
     <% end %>
   </div>
 </div>

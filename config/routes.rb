@@ -6,13 +6,13 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
-  devise_for :users, path: 'auth', path_names: {
+  devise_for :user_identity, path: 'auth', path_names: {
       sign_in:      'sign_in',
       sign_out:     'sign_out',
       registration: 'account'
     },
     controllers: {
-      registrations:      'users/registrations',
+      registrations:      'users/email_identities',
       confirmations:      'users/confirmations',
       sessions:           'users/sessions',
       passwords:          'users/passwords',
