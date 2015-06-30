@@ -85,4 +85,18 @@ footer {
 
 .btn-primary.social {
   font-size: x-large;
+  margin-top: 0px;
+
+  &.social-twitter {
+    margin-left: 24px;
+  }
+
+  &.social-google-plus {
+    float: right;
+  }
+
+  &.social-facebook {
+    float: left;
+  }
 }
+
