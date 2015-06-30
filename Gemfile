@@ -18,6 +18,7 @@ gem 'rollbar', '~> 1.5.3'
 gem 'resque-rollbar', '~> 0.3'
 gem 'dalli', '~> 2.7'
 gem 'omniauth-facebook', '~> 2.0'
+gem 'omniauth-twitter', '~> 1.2'
 
 group :development do
   gem 'mailcatcher'
