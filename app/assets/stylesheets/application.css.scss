@@ -87,6 +87,10 @@ footer {
   font-size: x-large;
   margin-top: 0px;
 
+  &:hover {
+    margin-top: 1px;
+  }
+
   &.social-twitter {
     margin-left: 24px;
   }
