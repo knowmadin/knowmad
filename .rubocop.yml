@@ -1,5 +1,7 @@
 AllCops:
   Include:
+    - 'app/**/*.rb'
+    - 'config/**/*.rb'
     - 'db/migrate/*'
     - 'Rakefile'
   Exclude:
