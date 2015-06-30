@@ -30,6 +30,10 @@ module ApplicationHelper
     flash_messages.join("\n").html_safe
   end
 
+  def omniauth_provider_button_class(provider)
+    "btn btn-primary social social-#{provider == :google_oauth2 ? 'google-plus' : provider}"
+  end
+
   private
 
   def normalized_type(type)
