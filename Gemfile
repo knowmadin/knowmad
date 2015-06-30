@@ -19,6 +19,7 @@ gem 'resque-rollbar', '~> 0.3'
 gem 'dalli', '~> 2.7'
 gem 'omniauth-facebook', '~> 2.0'
 gem 'omniauth-twitter', '~> 1.2'
+gem 'omniauth-google-oauth2', '~> 0.2'
 
 group :development do
   gem 'mailcatcher'
@@ -33,5 +34,5 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'timecop'
-  gem "spring", '~> 1.3 '
+  gem 'spring', '~> 1.3 '
 end
