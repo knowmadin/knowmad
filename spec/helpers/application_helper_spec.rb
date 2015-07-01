@@ -27,61 +27,64 @@ describe ApplicationHelper do
     end
 
 
-    it 'should work with a notice' do
-      allow(controller).to receive(:flash) { {notice: 'Hello'} }
+    context 'with a notice' do
+      before { allow(controller).to receive(:flash) { {notice: 'Hello'} } }
+      let(:bootstrap_flash) { helper.bootstrap_flash }
 
-      element = helper.bootstrap_flash
-
-      expect(element).to have_tag(:div,
-        text: '×Hello',
-        with: {class: 'alert fade in alert-success'}) {
-          with_tag(:button,
-            text: '×',
-            with: {
-              class: 'close',
-              'data-dismiss' => 'alert'
-            }
-          )
-        }
+      it 'should work with a notice' do
+        expect(bootstrap_flash).to have_tag(:div,
+            text: '×Hello',
+            with: {class: 'alert fade in alert-success'}) {
+            with_tag(:button,
+              text: '×',
+              with: {
+                class: 'close',
+                'data-dismiss' => 'alert'
+              }
+            )
+          }
+      end
     end
 
-    it 'should work with a notice and an extra class' do
-      allow(controller).to receive(:flash) { {notice: 'Hello'} }
+    context 'with an extra class parameter' do
+      before { allow(controller).to receive(:flash) { {notice: 'Hello'} } }
+      let(:bootstrap_flash) { helper.bootstrap_flash(class: 'extra-class') }
 
-      element = helper.bootstrap_flash(class: 'extra-class')
-
-      expect(element).to have_tag(:div,
-        text: '×Hello',
-        with: {class: 'alert fade in alert-success extra-class'}) {
-          with_tag(:button,
-            text: '×',
-            with: {
-              class: 'close',
-              'data-dismiss' => 'alert'
-            }
-          )
-        }
+      it 'should work with a notice and an extra class' do
+        expect(element).to have_tag(:div,
+            text: '×Hello',
+            with: {class: 'alert fade in alert-success extra-class'}) {
+            with_tag(:button,
+              text: '×',
+              with: {
+                class: 'close',
+                'data-dismiss' => 'alert'
+              }
+            )
+          }
+      end
     end
 
-    it 'should work with a notice and an extra class and an extra attribute' do
-      allow(controller).to receive(:flash) { {notice: 'Hello'} }
+    context 'with an extra class parameter and an attribute' do
+      before { allow(controller).to receive(:flash) { {notice: 'Hello'} } }
+      let(:bootstrap_flash) { helper.bootstrap_flash(class: 'extra-class', 'data-no-transition-cache' => true) }
 
-      element = helper.bootstrap_flash(class: 'extra-class', 'data-no-transition-cache' => true)
-
-      expect(element).to have_tag(:div,
-        text: '×Hello',
-        with: {
-          class: 'alert fade in alert-success extra-class',
-          'data-no-transition-cache' => true
-        }) {
-          with_tag(:button,
-            text: '×',
+      it 'should work with a notice and an extra class' do
+        expect(element).to have_tag(:div,
+            text: '×Hello',
             with: {
-              class: 'close',
-              'data-dismiss' => 'alert'
-            }
-          )
-        }
+              class: 'alert fade in alert-success extra-class',
+              'data-no-transition-cache' => true
+            }) {
+            with_tag(:button,
+              text: '×',
+              with: {
+                class: 'close',
+                'data-dismiss' => 'alert'
+              }
+            )
+          }
+      end
     end
   end
 end
