@@ -4,7 +4,7 @@
       <%= image_tag "logo.png" %>
     </a>
 
-    <% if controller_name == 'home' && !email_identity_signed_in? %>
+    <% if controller_name == 'home' && (!email_identity_signed_in? || !facebook_identity_signed_in?) %>
       <%= form_for(:email_identity, as: :email_identity, url: session_path(:email_identity)) do |f| %>
         <div class="input-group">
           <%= f.label :password, class: 'sr-only'%>
@@ -28,7 +28,11 @@
         </div>
       <% end %>
     <% elsif email_identity_signed_in? %>
-      <%= link_to "Log out", destroy_session_path(:email_identity), method: :delete, class: 'pull-right btn btn-default log-out' %>
+      <%= link_to '', destroy_session_path(:email_identity), method: :delete,
+        class: 'pull-right btn btn-default log-out glyphicons glyphicons-log-out' %>
+    <% elsif facebook_identity_signed_in? %>
+      <%= link_to '', destroy_session_path(:facebook_identity), method: :delete,
+        class: 'pull-right btn btn-default log-out glyphicons glyphicons-log-out' %>
     <% end %>
   </div>
 </div>
