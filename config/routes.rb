@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       registration: 'account'
     },
     controllers: {
-      registrations:      'users/email_identities',
+      registrations:      'users/registrations',
       confirmations:      'users/confirmations',
       sessions:           'users/sessions',
       passwords:          'users/passwords',
