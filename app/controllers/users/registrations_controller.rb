@@ -1,17 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  def create
-    super do |resource|
-      if resource.errors.any?
-        flash[:error] = resource.errors.full_messages.to_sentence
-      end
-    end
-  end
+  include FlashActiveRecordErrors
 
-  def update
-    super do |resource|
-      if resource.errors.any?
-        flash[:error] = resource.errors.full_messages.to_sentence
-      end
-    end
-  end
+  add_active_record_errors_to_flash :create, :update
 end

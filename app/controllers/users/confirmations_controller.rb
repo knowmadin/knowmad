@@ -1,9 +1,5 @@
 class Users::ConfirmationsController < Devise::ConfirmationsController
-  def create
-    super do |resource|
-      if resource.errors.any?
-        flash[:error] = resource.errors.full_messages.to_sentence
-      end
-    end
-  end
+  include FlashActiveRecordErrors
+
+  add_active_record_errors_to_flash :create
 end
