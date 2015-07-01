@@ -4,6 +4,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       flash[:error] = facebook_identity.errors.full_messages.to_sentence
       redirect_to new_email_identity_session_path
     else
+      sign_in(:facebook_identity, facebook_identity)
       redirect_to '/'
     end
   end
@@ -19,7 +20,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   private
 
   def facebook_identity
-    FacebookIdentity.find_or_create_by(email: raw_info[:email]) do |facebook_identity|
+    @facebook_identity ||= FacebookIdentity.find_or_create_by(email: raw_info[:email]) do |facebook_identity|
       facebook_identity.name = raw_info[:name]
       facebook_identity.first_name = raw_info[:first_name]
       facebook_identity.last_name = raw_info[:last_name]
