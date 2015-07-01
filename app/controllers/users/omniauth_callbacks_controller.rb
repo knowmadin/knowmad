@@ -1,4 +1,4 @@
-class EmailIdentities::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
     if facebook_identity.errors.any?
       flash[:error] = facebook_identity.errors.full_messages.to_sentence
