@@ -4,7 +4,7 @@
       <div class="row">
         <%- resource_class.omniauth_providers.each do |provider| %>
           <div class="col-sm-4">
-            <%= link_to '', user_identity_omniauth_authorize_path(provider), class: omniauth_provider_button_class(provider) %>
+            <%= link_to '', email_identity_omniauth_authorize_path(provider), class: omniauth_provider_button_class(provider) %>
           </div>
         <% end -%>
       </div>
