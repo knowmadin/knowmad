@@ -1,4 +1,4 @@
-class Users::SessionsController < Devise::SessionsController
+class Identities::SessionsController < Devise::SessionsController
   include FlashActiveRecordErrors
 
   add_active_record_errors_to_flash :create

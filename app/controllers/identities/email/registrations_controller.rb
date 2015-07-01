@@ -1,4 +1,4 @@
-class Users::PasswordsController < Devise::PasswordsController
+class Identities::RegistrationsController < Devise::RegistrationsController
   include FlashActiveRecordErrors
 
   add_active_record_errors_to_flash :create, :update

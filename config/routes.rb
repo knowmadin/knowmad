@@ -12,15 +12,15 @@ Rails.application.routes.draw do
       registration: 'account'
     },
     controllers: {
-      registrations:      'users/registrations',
-      confirmations:      'users/confirmations',
-      sessions:           'users/sessions',
-      passwords:          'users/passwords',
-      omniauth_callbacks: 'users/omniauth_callbacks'
+      registrations:      'identities/email/registrations',
+      confirmations:      'identities/email/confirmations',
+      sessions:           'identities/sessions',
+      passwords:          'identities/email/passwords',
+      omniauth_callbacks: 'identities/social/omniauth_callbacks'
     }
 
   devise_scope :facebook_identity do
-    delete 'facebook/logout' => 'users/sessions#destroy', as: :facebook_logout
+    delete 'facebook/logout' => 'identities/sessions#destroy', as: :facebook_logout
   end
   devise_for :facebook_identity
 end
