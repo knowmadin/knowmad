@@ -1,6 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
-    raise "#{request.env['omniauth.auth']}"
     render 'home/index'
   end
 

@@ -2,6 +2,7 @@ require 'resque_web'
 ResqueWeb::Engine.eager_load!
 
 Rails.application.routes.draw do
+  devise_for :facebook_identities
   mount ResqueWeb::Engine => '/resque_web'
 
   root to: 'home#index'
