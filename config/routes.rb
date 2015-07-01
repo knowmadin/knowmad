@@ -2,7 +2,6 @@ require 'resque_web'
 ResqueWeb::Engine.eager_load!
 
 Rails.application.routes.draw do
-  devise_for :facebook_identities
   mount ResqueWeb::Engine => '/resque_web'
 
   root to: 'home#index'
@@ -19,4 +18,9 @@ Rails.application.routes.draw do
       passwords:          'users/passwords',
       omniauth_callbacks: 'users/omniauth_callbacks'
     }
+
+  devise_scope :facebook_identity do
+    delete 'facebook/logout' => 'users/sessions#destroy', as: :facebook_logout
+  end
+  devise_for :facebook_identity
 end
