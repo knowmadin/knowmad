@@ -1,4 +1,6 @@
 class DeviseCreateFacebookIdentities < ActiveRecord::Migration
+  using(:master, :slave)
+
   def change
     create_table(:facebook_identities) do |t|
       ## Rememberable
