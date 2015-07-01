@@ -11,13 +11,11 @@ class DeviseCreateFacebookIdentities < ActiveRecord::Migration
       t.string   :current_sign_in_ip
       t.string   :last_sign_in_ip
 
-      t.decimal :uid
       t.string :email
       t.string :name
       t.string :first_name
       t.string :last_name
       t.string :profile_image_url
-      t.string :location
       t.boolean :verified
       t.string :token
       t.datetime :expires_at
