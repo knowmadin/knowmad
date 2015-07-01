@@ -11,7 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150623040325) do
+ActiveRecord::Schema.define(version: 20150701064342) do
+
+  create_table "facebook_identities", force: :cascade do |t|
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",       limit: 4,                  default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip",  limit: 255
+    t.string   "last_sign_in_ip",     limit: 255
+    t.decimal  "uid",                             precision: 10
+    t.string   "email",               limit: 255
+    t.string   "name",                limit: 255
+    t.string   "first_name",          limit: 255
+    t.string   "last_name",           limit: 255
+    t.string   "profile_image_url",   limit: 255
+    t.string   "location",            limit: 255
+    t.boolean  "verified",            limit: 1
+    t.string   "token",               limit: 255
+    t.datetime "expires_at"
+    t.decimal  "facebook_id",                     precision: 10
+    t.datetime "created_at",                                                 null: false
+    t.datetime "updated_at",                                                 null: false
+  end
+
+  add_index "facebook_identities", ["email"], name: "index_facebook_identities_on_email", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false

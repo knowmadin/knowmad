@@ -17,13 +17,15 @@ describe ApplicationHelper do
   end
 
   describe '#bootstrap_flash' do
-    it 'should not return anything without flashes' do
-      allow(self).to receive(:flash) { {} }
+    context 'without a flash' do
+      before { allow(self).to receive(:flash) { {} } }
+      let(:bootstrap_flash) { helper.bootstrap_flash }
 
-      element = helper.bootstrap_flash
-
-      expect(element).to eql('')
+      it 'should not return anything without flashes' do
+        expect(bootstrap_flash).to eql('')
+      end
     end
+
 
     it 'should work with a notice' do
       allow(controller).to receive(:flash) { {notice: 'Hello'} }

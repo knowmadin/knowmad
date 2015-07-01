@@ -20,8 +20,8 @@ class DeviseCreateFacebookIdentities < ActiveRecord::Migration
       t.string :location
       t.boolean :verified
       t.string :token
-      t.datatime :expires_at
-      t.decimal :id
+      t.datetime :expires_at
+      t.decimal :facebook_id
 
       t.timestamps null: false
     end
