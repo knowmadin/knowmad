@@ -12,12 +12,10 @@ class Identities::Social::OmniauthCallbacksController < Devise::OmniauthCallback
   end
 
   def twitter
-    raise "#{request.env['omniauth.auth']}"
     render 'home/index'
   end
 
   def google_oauth2
-    raise "#{request.env['omniauth.auth']}"
     render 'home/index'
   end
 
