@@ -50,7 +50,7 @@ describe ApplicationHelper do
       let(:bootstrap_flash) { helper.bootstrap_flash(class: 'extra-class') }
 
       it 'should work with a notice and an extra class' do
-        expect(element).to have_tag(:div,
+        expect(bootstrap_flash).to have_tag(:div,
           text: '×Hello',
           with: {class: 'alert fade in alert-success extra-class'}) {
             with_tag(:button,
@@ -69,7 +69,7 @@ describe ApplicationHelper do
       let(:bootstrap_flash) { helper.bootstrap_flash(class: 'extra-class', 'data-no-transition-cache' => true) }
 
       it 'should work with a notice and an extra class' do
-        expect(element).to have_tag(:div,
+        expect(bootstrap_flash).to have_tag(:div,
           text: '×Hello',
           with: {
             class: 'alert fade in alert-success extra-class',
