@@ -5,7 +5,7 @@ class Identities::Social::OmniauthCallbacksController < Devise::OmniauthCallback
       redirect_to new_email_identity_session_path
     else
       sign_in(:facebook_identity, facebook_identity)
-      redirect_to controller: 'home', action: 'index', anchor: nil
+      redirect_to controller: '/home', action: 'index', anchor: nil
     end
   end
 
