@@ -1,3 +1,5 @@
+require 'knowmad/facebook_identities/initializer'
+
 class Identities::Social::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
     if facebook_identity.errors.any?
@@ -20,24 +22,6 @@ class Identities::Social::OmniauthCallbacksController < Devise::OmniauthCallback
   private
 
   def facebook_identity
-    @facebook_identity ||= FacebookIdentity.find_or_create_by(email: raw_info[:email]) do |facebook_identity|
-      facebook_identity.name = raw_info.name
-      facebook_identity.first_name = raw_info.first_name
-      facebook_identity.last_name = raw_info.last_name
-      facebook_identity.profile_image_url = request.env['omniauth.auth'].info.image
-      facebook_identity.verified = raw_info.verfified
-      facebook_identity.facebook_id = raw_info.id
-
-      facebook_identity.expires_at = Time.at(credentials.expires_at)
-      facebook_identity.token = credentials.token
-    end
-  end
-
-  def raw_info
-    request.env['omniauth.auth'].extra.raw_info
-  end
-
-  def credentials
-    request.env['omniauth.auth'].credentials
+    @facebook_identity ||= Knowmad::FacebookIdentities::Initializer.new(request.env['omniauth.auth']).facebook_identity
   end
 end

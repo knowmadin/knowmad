@@ -26,15 +26,14 @@ describe ApplicationHelper do
       end
     end
 
-
     context 'with a notice' do
       before { allow(controller).to receive(:flash) { {notice: 'Hello'} } }
       let(:bootstrap_flash) { helper.bootstrap_flash }
 
       it 'should work with a notice' do
         expect(bootstrap_flash).to have_tag(:div,
-            text: '×Hello',
-            with: {class: 'alert fade in alert-success'}) {
+          text: '×Hello',
+          with: {class: 'alert fade in alert-success'}) {
             with_tag(:button,
               text: '×',
               with: {
@@ -52,8 +51,8 @@ describe ApplicationHelper do
 
       it 'should work with a notice and an extra class' do
         expect(element).to have_tag(:div,
-            text: '×Hello',
-            with: {class: 'alert fade in alert-success extra-class'}) {
+          text: '×Hello',
+          with: {class: 'alert fade in alert-success extra-class'}) {
             with_tag(:button,
               text: '×',
               with: {
@@ -71,11 +70,11 @@ describe ApplicationHelper do
 
       it 'should work with a notice and an extra class' do
         expect(element).to have_tag(:div,
-            text: '×Hello',
-            with: {
-              class: 'alert fade in alert-success extra-class',
-              'data-no-transition-cache' => true
-            }) {
+          text: '×Hello',
+          with: {
+            class: 'alert fade in alert-success extra-class',
+            'data-no-transition-cache' => true
+          }) {
             with_tag(:button,
               text: '×',
               with: {
