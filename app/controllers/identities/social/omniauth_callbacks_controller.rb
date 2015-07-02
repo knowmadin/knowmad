@@ -21,7 +21,7 @@ class Identities::Social::OmniauthCallbacksController < Devise::OmniauthCallback
 
   def facebook_identity
     @facebook_identity ||= FacebookIdentity.find_or_create_by(email: raw_info[:email]) do |facebook_identity|
-      facebook_identity.name = raw_infona.me
+      facebook_identity.name = raw_info.name
       facebook_identity.first_name = raw_info.first_name
       facebook_identity.last_name = raw_info.last_name
       facebook_identity.profile_image_url = request.env['omniauth.auth'].info.image
