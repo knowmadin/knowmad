@@ -1,4 +1,5 @@
 require 'knowmad/facebook_identities/initializer'
+require 'knowmad/twitter_identities/initializer'
 
 class Identities::Social::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
