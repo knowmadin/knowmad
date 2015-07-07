@@ -19,6 +19,8 @@ Rails.application.routes.draw do
       omniauth_callbacks: 'identities/social/omniauth_callbacks'
     }
 
+  resource :account
+
   devise_scope :facebook_identity do
     delete 'facebook/logout' => 'identities/sessions#destroy', as: :facebook_logout
   end

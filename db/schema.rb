@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707054220) do
+ActiveRecord::Schema.define(version: 20150707230627) do
 
   create_table "accounts", force: :cascade do |t|
     t.string   "subdomain",  limit: 255
@@ -38,8 +38,10 @@ ActiveRecord::Schema.define(version: 20150707054220) do
     t.string   "unconfirmed_email",      limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+    t.integer  "account_id",             limit: 4
   end
 
+  add_index "email_identities", ["account_id"], name: "index_email_identities_on_account_id", using: :btree
   add_index "email_identities", ["confirmation_token"], name: "index_email_identities_on_confirmation_token", unique: true, using: :btree
   add_index "email_identities", ["email"], name: "index_email_identities_on_email", unique: true, using: :btree
   add_index "email_identities", ["reset_password_token"], name: "index_email_identities_on_reset_password_token", unique: true, using: :btree
@@ -62,8 +64,10 @@ ActiveRecord::Schema.define(version: 20150707054220) do
     t.decimal  "facebook_id",                     precision: 10
     t.datetime "created_at",                                                 null: false
     t.datetime "updated_at",                                                 null: false
+    t.integer  "account_id",          limit: 4
   end
 
+  add_index "facebook_identities", ["account_id"], name: "index_facebook_identities_on_account_id", using: :btree
   add_index "facebook_identities", ["email"], name: "index_facebook_identities_on_email", unique: true, using: :btree
 
   create_table "google_identities", force: :cascade do |t|
@@ -83,8 +87,10 @@ ActiveRecord::Schema.define(version: 20150707054220) do
     t.datetime "expires_at"
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
+    t.integer  "account_id",          limit: 4
   end
 
+  add_index "google_identities", ["account_id"], name: "index_google_identities_on_account_id", using: :btree
   add_index "google_identities", ["email"], name: "index_google_identities_on_email", unique: true, using: :btree
 
   create_table "twitter_identities", force: :cascade do |t|
@@ -103,8 +109,10 @@ ActiveRecord::Schema.define(version: 20150707054220) do
     t.decimal  "twitter_id",                      precision: 10
     t.datetime "created_at",                                                 null: false
     t.datetime "updated_at",                                                 null: false
+    t.integer  "account_id",          limit: 4
   end
 
+  add_index "twitter_identities", ["account_id"], name: "index_twitter_identities_on_account_id", using: :btree
   add_index "twitter_identities", ["screen_name"], name: "index_twitter_identities_on_screen_name", unique: true, using: :btree
 
 end

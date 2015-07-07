@@ -1,5 +1,5 @@
-class TwitterIdentity < ActiveRecord::Base
-  devise :rememberable, :trackable
+class TwitterIdentity < Identity
+  belongs_to :account
 
   validates_uniqueness_of :screen_name
 end

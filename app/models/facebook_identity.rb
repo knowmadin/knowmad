@@ -1,5 +1,5 @@
-class FacebookIdentity < ActiveRecord::Base
-  devise :rememberable, :trackable
+class FacebookIdentity < Identity
+  belongs_to :account
 
   validates_uniqueness_of :email
 end

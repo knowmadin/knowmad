@@ -5,9 +5,11 @@ class Identities::Social::OmniauthCallbacksController < Devise::OmniauthCallback
     if facebook_identity.new_record? && !facebook_identity.save
       flash[:error] = facebook_identity.errors.full_messages.to_sentence
       redirect_to new_email_identity_session_path
-    else
+    elsif facebook_identity.account_id.present?
       sign_in(:facebook_identity, facebook_identity)
       redirect_to controller: '/home', action: 'index', anchor: nil
+    else
+      redirect_to controller: '/accounts', action: 'new', anchor: nil
     end
   end
 
@@ -15,9 +17,11 @@ class Identities::Social::OmniauthCallbacksController < Devise::OmniauthCallback
     if twitter_identity.new_record? && !twitter_identity.save
       flash[:error] = twitter_identity.errors.full_messages.to_sentence
       redirect_to new_email_identity_session_path
-    else
+    elsif twitter_identity.account_id.present?
       sign_in(:twitter_identity, twitter_identity)
       redirect_to controller: '/home', action: 'index', anchor: nil
+    else
+      redirect_to controller: '/accounts', action: 'new', anchor: nil
     end
   end
 
@@ -25,9 +29,11 @@ class Identities::Social::OmniauthCallbacksController < Devise::OmniauthCallback
     if google_identity.new_record? && !google_identity.save
       flash[:error] = google_identity.errors.full_messages.to_sentence
       redirect_to new_email_identity_session_path
-    else
+    elsif google_identity.account_id.present?
       sign_in(:google_identity, google_identity)
       redirect_to controller: '/home', action: 'index', anchor: nil
+    else
+      redirect_to controller: '/accounts', action: 'new', anchor: nil
     end
   end
 
