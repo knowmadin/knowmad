@@ -1,4 +1,4 @@
-require_relative 'initializer'
-require_relative 'facebook/initializer'
-require_relative 'twitter/initializer'
-require_relative 'google/initializer'
+require_relative 'identities/initializer'
+require_relative 'identities/facebook/initializer'
+require_relative 'identities/twitter/initializer'
+require_relative 'identities/google/initializer'
