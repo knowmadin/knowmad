@@ -1,4 +1,6 @@
 class CreateAccounts < ActiveRecord::Migration
+  using(:master, :slave)
+
   def change
     create_table :accounts do |t|
       t.string :subdomain
