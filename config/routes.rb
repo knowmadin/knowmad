@@ -23,4 +23,9 @@ Rails.application.routes.draw do
     delete 'facebook/logout' => 'identities/sessions#destroy', as: :facebook_logout
   end
   devise_for :facebook_identity
+
+  devise_scope :twitter_identity do
+    delete 'twitter/logout' => 'identities/sessions#destroy', as: :twitter_logout
+  end
+  devise_for :twitter_identity
 end

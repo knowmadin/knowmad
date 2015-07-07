@@ -33,6 +33,9 @@
     <% elsif facebook_identity_signed_in? %>
       <%= link_to '', facebook_logout_path, method: :delete,
         class: 'pull-right log-out glyphicons glyphicons-log-out' %>
+    <% elsif twitter_identity_signed_in? %>
+      <%= link_to '', twitter_logout_path, method: :delete,
+        class: 'pull-right log-out glyphicons glyphicons-log-out' %>
     <% end %>
   </div>
 </div>
