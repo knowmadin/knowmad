@@ -4,7 +4,7 @@
       <%= image_tag "logo.png" %>
     </a>
 
-    <% if controller_name == 'home' && (!email_identity_signed_in? && !facebook_identity_signed_in?) %>
+    <% if controller_name == 'home' && (!email_identity_signed_in? && !facebook_identity_signed_in? && !twitter_identity_signed_in?) %>
       <%= form_for(:email_identity, as: :email_identity, url: session_path(:email_identity)) do |f| %>
         <div class="input-group">
           <%= f.label :password, class: 'sr-only'%>
