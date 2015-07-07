@@ -21,7 +21,6 @@ class DeviseCreateTwitterIdentities < ActiveRecord::Migration
       t.string :secret
       t.decimal :twitter_id
 
-
       t.timestamps null: false
     end
 
