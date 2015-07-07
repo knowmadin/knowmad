@@ -1,5 +1,5 @@
 class Account < ActiveRecord::Base
-  validates_uniquness_of :subdomain
+  validates_uniqueness_of :subdomain
 
   has_one :email_identity
   has_one :twitter_identity
