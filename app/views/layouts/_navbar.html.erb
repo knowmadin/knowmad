@@ -16,7 +16,7 @@
     <% elsif google_identity_signed_in? %>
       <%= link_to '', google_logout_path, method: :delete,
         class: 'pull-right log-out glyphicons glyphicons-log-out' %>
-    <% if controller_name == 'home' %>
+    <% elsif controller_name == 'home' %>
       <%= form_for(:email_identity, as: :email_identity, url: session_path(:email_identity)) do |f| %>
         <div class="input-group">
           <%= f.label :password, class: 'sr-only'%>
