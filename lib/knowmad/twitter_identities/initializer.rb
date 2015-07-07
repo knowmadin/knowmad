@@ -1,5 +1,5 @@
 module Knowmad
-  module FacebookIdentities
+  module TwitterIdentities
     class Initializer
       def initialize(auth_hash)
         @auth_hash = auth_hash
