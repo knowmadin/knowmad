@@ -37,7 +37,7 @@ octopus:
       encoding: utf8
       reconnect: true
       database: knowmad_production
-      pool: 5
       username: <%= ENV['KNOWMAD_PRODUCTION_DB_SLAVE_USER'] %>
       password: <%= ENV['KNOWMAD_PRODUCTION_DB_SLAVE_PASS'] %>
       host: mysqlslave
+      pool: 5
