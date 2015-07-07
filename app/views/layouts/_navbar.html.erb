@@ -4,7 +4,19 @@
       <%= image_tag "logo.png" %>
     </a>
 
-    <% if controller_name == 'home' && (!email_identity_signed_in? && !facebook_identity_signed_in? && !twitter_identity_signed_in?) %>
+    <% if email_identity_signed_in? %>
+      <%= link_to '', destroy_session_path(:email_identity), method: :delete,
+        class: 'pull-right log-out glyphicons glyphicons-log-out' %>
+    <% elsif facebook_identity_signed_in? %>
+      <%= link_to '', facebook_logout_path, method: :delete,
+        class: 'pull-right log-out glyphicons glyphicons-log-out' %>
+    <% elsif twitter_identity_signed_in? %>
+      <%= link_to '', twitter_logout_path, method: :delete,
+        class: 'pull-right log-out glyphicons glyphicons-log-out' %>
+    <% elsif google_identity_signed_in? %>
+      <%= link_to '', google_logout_path, method: :delete,
+        class: 'pull-right log-out glyphicons glyphicons-log-out' %>
+    <% if controller_name == 'home' %>
       <%= form_for(:email_identity, as: :email_identity, url: session_path(:email_identity)) do |f| %>
         <div class="input-group">
           <%= f.label :password, class: 'sr-only'%>
@@ -27,15 +39,6 @@
           </div>
         </div>
       <% end %>
-    <% elsif email_identity_signed_in? %>
-      <%= link_to '', destroy_session_path(:email_identity), method: :delete,
-        class: 'pull-right log-out glyphicons glyphicons-log-out' %>
-    <% elsif facebook_identity_signed_in? %>
-      <%= link_to '', facebook_logout_path, method: :delete,
-        class: 'pull-right log-out glyphicons glyphicons-log-out' %>
-    <% elsif twitter_identity_signed_in? %>
-      <%= link_to '', twitter_logout_path, method: :delete,
-        class: 'pull-right log-out glyphicons glyphicons-log-out' %>
     <% end %>
   </div>
 </div>
