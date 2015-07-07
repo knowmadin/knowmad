@@ -3,7 +3,7 @@ module Knowmad
     module Google
       class Initializer < Knowmad::Identities::Initializer
         def google_identity
-          GoogleIdentity.find_or_create_by(email: raw_info.email) do |google_identity|
+          GoogleIdentity.find_or_initialize_by(email: raw_info.email) do |google_identity|
             add_info(google_identity)
             add_raw_info(google_identity)
             add_credentials(google_identity)

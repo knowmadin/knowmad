@@ -3,7 +3,7 @@ module Knowmad
     module Twitter
       class Initializer < Knowmad::Identities::Initializer
         def twitter_identity
-          TwitterIdentity.find_or_create_by(screen_name: raw_info.screen_name) do |twitter_identity|
+          TwitterIdentity.find_or_initialize_by(screen_name: raw_info.screen_name) do |twitter_identity|
             add_raw_info(twitter_identity)
             add_credentials(twitter_identity)
           end

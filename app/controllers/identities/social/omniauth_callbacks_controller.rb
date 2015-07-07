@@ -2,7 +2,7 @@ require 'knowmad/identities'
 
 class Identities::Social::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
-    if facebook_identity.errors.any?
+    if facebook_identity.new_record? && !facebook_identity.save
       flash[:error] = facebook_identity.errors.full_messages.to_sentence
       redirect_to new_email_identity_session_path
     else
@@ -12,7 +12,7 @@ class Identities::Social::OmniauthCallbacksController < Devise::OmniauthCallback
   end
 
   def twitter
-    if twitter_identity.errors.any?
+    if twitter_identity.new_record? && !twitter_identity.save
       flash[:error] = twitter_identity.errors.full_messages.to_sentence
       redirect_to new_email_identity_session_path
     else
@@ -22,7 +22,7 @@ class Identities::Social::OmniauthCallbacksController < Devise::OmniauthCallback
   end
 
   def google_oauth2
-    if google_identity.errors.any?
+    if google_identity.new_record? && !google_identity.save
       flash[:error] = google_identity.errors.full_messages.to_sentence
       redirect_to new_email_identity_session_path
     else
