@@ -23,7 +23,13 @@ class Identities::Social::OmniauthCallbacksController < Devise::OmniauthCallback
   end
 
   def google_oauth2
-    render 'home/index'
+    if google_identity.errors.any?
+      flash[:error] = google_identity.errors.full_messages.to_sentence
+      redirect_to new_email_identity_session_path
+    else
+      sign_in(:google_identity, google_identity)
+      redirect_to controller: '/home', action: 'index', anchor: nil
+    end
   end
 
   private
@@ -33,6 +39,10 @@ class Identities::Social::OmniauthCallbacksController < Devise::OmniauthCallback
   end
 
   def twitter_identity
-    @facebook_identity ||= Knowmad::TwitterIdentities::Initializer.new(request.env['omniauth.auth']).twitter_identity
+    @twitter_identity ||= Knowmad::TwitterIdentities::Initializer.new(request.env['omniauth.auth']).twitter_identity
+  end
+
+  def google_identity
+    @google_identity ||= Knowmad::GoogleIdentities::Initializer.new(request.env['omniauth.auth']).google_identity
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706064342) do
+ActiveRecord::Schema.define(version: 20150706999999) do
 
   create_table "email_identities", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -57,6 +57,27 @@ ActiveRecord::Schema.define(version: 20150706064342) do
   end
 
   add_index "facebook_identities", ["email"], name: "index_facebook_identities_on_email", unique: true, using: :btree
+
+  create_table "google_identities", force: :cascade do |t|
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",       limit: 4,   default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip",  limit: 255
+    t.string   "last_sign_in_ip",     limit: 255
+    t.string   "email",               limit: 255
+    t.string   "name",                limit: 255
+    t.string   "first_name",          limit: 255
+    t.string   "last_name",           limit: 255
+    t.string   "profile_image_url",   limit: 255
+    t.boolean  "verified",            limit: 1
+    t.string   "token",               limit: 255
+    t.datetime "expires_at"
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+  end
+
+  add_index "google_identities", ["email"], name: "index_google_identities_on_email", unique: true, using: :btree
 
   create_table "twitter_identities", force: :cascade do |t|
     t.datetime "remember_created_at"

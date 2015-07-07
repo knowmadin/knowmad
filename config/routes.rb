@@ -28,4 +28,9 @@ Rails.application.routes.draw do
     delete 'twitter/logout' => 'identities/sessions#destroy', as: :twitter_logout
   end
   devise_for :twitter_identity
+
+  devise_scope :google_identity do
+    delete 'google/logout' => 'identities/sessions#destroy', as: :google_logout
+  end
+  devise_for :google_identity
 end
