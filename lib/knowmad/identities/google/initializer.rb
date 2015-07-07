@@ -1,10 +1,6 @@
 module Knowmad
-  module GoogleIdentities
-    class Initializer
-      def initialize(auth_hash)
-        @auth_hash = auth_hash
-      end
-
+  module Identities
+    class Google::Initializer < Initializer
       def google_identity
         GoogleIdentity.find_or_create_by(email: raw_info.email) do |google_identity|
           add_info(google_identity)
@@ -14,8 +10,6 @@ module Knowmad
       end
 
       private
-
-      attr_reader :auth_hash
 
       def add_info(google_identity)
         google_identity.name = info.name
@@ -31,18 +25,6 @@ module Knowmad
       def add_credentials(google_identity)
         google_identity.expires_at = Time.at(credentials.expires_at)
         google_identity.token = credentials.token
-      end
-
-      def info
-        @raw_info ||= auth_hash.info
-      end
-
-      def raw_info
-        @raw_info || auth_hash.extra.raw_info
-      end
-
-      def credentials
-        @credentials ||= auth_hash.credentials
       end
     end
   end
