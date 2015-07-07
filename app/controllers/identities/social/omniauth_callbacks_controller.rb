@@ -34,7 +34,8 @@ class Identities::Social::OmniauthCallbacksController < Devise::OmniauthCallback
   private
 
   def facebook_identity
-    @facebook_identity ||= Knowmad::Identities::Facebook::Initializer.new(request.env['omniauth.auth']).facebook_identity
+    @facebook_identity ||=
+      Knowmad::Identities::Facebook::Initializer.new(request.env['omniauth.auth']).facebook_identity
   end
 
   def twitter_identity
