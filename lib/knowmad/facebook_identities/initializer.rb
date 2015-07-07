@@ -6,7 +6,7 @@ module Knowmad
       end
 
       def facebook_identity
-        FacebookIdentity.find_or_create_by(email: raw_info[:email]) do |facebook_identity|
+        FacebookIdentity.find_or_create_by(email: raw_info.email) do |facebook_identity|
           add_info(facebook_identity)
           add_raw_info(facebook_identity)
           add_credentials(facebook_identity)
