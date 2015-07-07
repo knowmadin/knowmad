@@ -25,6 +25,6 @@ class DeviseCreateTwitterIdentities < ActiveRecord::Migration
       t.timestamps null: false
     end
 
-    add_index :twitter_identities, :email, unique: true
+    add_index :twitter_identities, :screen_name, unique: true
   end
 end
