@@ -19,7 +19,7 @@ class DeviseCreateTwitterIdentities < ActiveRecord::Migration
       t.boolean :verified
       t.string :token
       t.string :secret
-      t.decimal :facebook_id
+      t.decimal :twitter_id
 
 
       t.timestamps null: false
