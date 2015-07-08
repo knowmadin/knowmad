@@ -22,6 +22,7 @@ gem 'dalli', '~> 2.7'
 gem 'omniauth-facebook', '~> 2.0'
 gem 'omniauth-twitter', '~> 1.2'
 gem 'omniauth-google-oauth2', '~> 0.2'
+gem 'stronger_parameters', '~> 2.1'
 
 group :development do
   gem 'mailcatcher'
