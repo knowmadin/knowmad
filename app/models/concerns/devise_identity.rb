@@ -6,6 +6,6 @@ module DeviseIdentity
   end
 
   def to_sym
-    self.class.model_name.to_sym
+    self.class.model_name.param_key.to_sym
   end
 end
