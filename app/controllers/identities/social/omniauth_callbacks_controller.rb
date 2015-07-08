@@ -20,7 +20,7 @@ class Identities::Social::OmniauthCallbacksController < Devise::OmniauthCallback
     if identity.new_record? && !identity.save
       flash[:error] = identity.errors.full_messages.to_sentence
       return redirect_to new_email_identity_session_path
-    elsif identity.account_id.present?
+    elsif identity.account_id
       redirect_params = {controller: '/home', action: 'index'}
     else
       redirect_params = {controller: '/accounts', action: 'new'}
