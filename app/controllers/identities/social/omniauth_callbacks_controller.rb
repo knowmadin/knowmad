@@ -2,45 +2,33 @@ require 'knowmad/identities'
 
 class Identities::Social::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
-    if facebook_identity.new_record? && !facebook_identity.save
-      flash[:error] = facebook_identity.errors.full_messages.to_sentence
-      redirect_to new_email_identity_session_path
-    elsif facebook_identity.account_id.present?
-      sign_in(:facebook_identity, facebook_identity)
-      redirect_to controller: '/home', action: 'index', anchor: nil
-    else
-      sign_in(:facebook_identity, facebook_identity)
-      redirect_to controller: '/accounts', action: 'new', anchor: nil
-    end
+    sign_in_and_redirect(facebook_identity)
   end
 
   def twitter
-    if twitter_identity.new_record? && !twitter_identity.save
-      flash[:error] = twitter_identity.errors.full_messages.to_sentence
-      redirect_to new_email_identity_session_path
-    elsif twitter_identity.account_id.present?
-      sign_in(:twitter_identity, twitter_identity)
-      redirect_to controller: '/home', action: 'index', anchor: nil
-    else
-      sign_in(:twitter_identity, twitter_identity)
-      redirect_to controller: '/accounts', action: 'new', anchor: nil
-    end
+    sign_in_and_redirect(twitter_identity)
+
   end
 
   def google_oauth2
-    if google_identity.new_record? && !google_identity.save
-      flash[:error] = google_identity.errors.full_messages.to_sentence
-      redirect_to new_email_identity_session_path
-    elsif google_identity.account_id.present?
-      sign_in(:google_identity, google_identity)
-      redirect_to controller: '/home', action: 'index', anchor: nil
-    else
-      sign_in(:google_identity, google_identity)
-      redirect_to controller: '/accounts', action: 'new', anchor: nil
-    end
+    sign_in_and_redirect(google_identity)
   end
 
   private
+
+  def sign_in_and_redirect(identity)
+    if identity.new_record? && !identity.save
+      flash[:error] = identity.errors.full_messages.to_sentence
+      return redirect_to new_email_identity_session_path
+    elsif identity.account_id.present?
+      redirect_params = {controller: '/home', action: 'index'}
+    else
+      redirect_params = {controller: '/accounts', action: 'new'}
+    end
+
+    sign_in(identity.to_sym, identity)
+    redirect_to redirect_params.merge(anchor: nil)
+  end
 
   def facebook_identity
     @facebook_identity ||=
