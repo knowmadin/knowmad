@@ -9,6 +9,7 @@ class Identities::Social::OmniauthCallbacksController < Devise::OmniauthCallback
       sign_in(:facebook_identity, facebook_identity)
       redirect_to controller: '/home', action: 'index', anchor: nil
     else
+      sign_in(:facebook_identity, facebook_identity)
       redirect_to controller: '/accounts', action: 'new', anchor: nil
     end
   end
@@ -21,6 +22,7 @@ class Identities::Social::OmniauthCallbacksController < Devise::OmniauthCallback
       sign_in(:twitter_identity, twitter_identity)
       redirect_to controller: '/home', action: 'index', anchor: nil
     else
+      sign_in(:twitter_identity, twitter_identity)
       redirect_to controller: '/accounts', action: 'new', anchor: nil
     end
   end
@@ -33,6 +35,7 @@ class Identities::Social::OmniauthCallbacksController < Devise::OmniauthCallback
       sign_in(:google_identity, google_identity)
       redirect_to controller: '/home', action: 'index', anchor: nil
     else
+      sign_in(:google_identity, google_identity)
       redirect_to controller: '/accounts', action: 'new', anchor: nil
     end
   end
