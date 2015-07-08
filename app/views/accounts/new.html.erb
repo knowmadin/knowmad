@@ -1,1 +1,7 @@
-TEST
+<div class="container">
+  <h2>What subdomain do you want? You need one</h2>
+  <%= form_for :account do |form|  %>
+    <%= f.text_field :subdomain %>
+    <%= f.submit %>
+  <% end %>
+</div>
