@@ -1,5 +1,5 @@
-class FacebookIdentity < Identity
-  self.table_name = 'facebook_identities'
+class FacebookIdentity < ActiveRecord::Base
+  include DeviseIdentity
 
   belongs_to :account
 

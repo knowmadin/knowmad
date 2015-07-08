@@ -1,5 +1,5 @@
-class GoogleIdentity < Identity
-  self.table_name = 'google_identities'
+class GoogleIdentity < ActiveRecord::Base
+  include DeviseIdentity
 
   belongs_to :account
 

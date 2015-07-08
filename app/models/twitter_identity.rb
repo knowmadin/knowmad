@@ -1,5 +1,5 @@
-class TwitterIdentity < Identity
-  self.table_name = 'twitter_identities'
+class TwitterIdentity < ActiveRecord::Base
+  include DeviseIdentity
 
   belongs_to :account
 
