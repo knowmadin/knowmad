@@ -2,21 +2,21 @@ require 'knowmad/identities'
 
 class Identities::Social::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
-    sign_in_and_redirect(facebook_identity)
+    identity_initialize_or_create_and_redirect(facebook_identity)
   end
 
   def twitter
-    sign_in_and_redirect(twitter_identity)
+    identity_initialize_or_create_and_redirect(twitter_identity)
 
   end
 
   def google_oauth2
-    sign_in_and_redirect(google_identity)
+    identity_initialize_or_create_and_redirect(google_identity)
   end
 
   private
 
-  def sign_in_and_redirect(identity)
+  def identity_initialize_or_create_and_redirect(identity)
     if identity.new_record? && !identity.save
       flash[:error] = identity.errors.full_messages.to_sentence
       return redirect_to new_email_identity_session_path
