@@ -6,6 +6,6 @@ module DeviseIdentity
   end
 
   def to_sym
-    self.class.name.underscore.to_sym
+    model_name.to_sym
   end
 end
