@@ -1,4 +1,4 @@
-class AddAccountReferenceToIdentities< ActiveRecord::Migration
+class AddAccountReferenceToIdentities < ActiveRecord::Migration
   using(:master, :slave)
 
   def change

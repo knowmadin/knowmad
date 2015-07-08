@@ -7,7 +7,6 @@ class Identities::Social::OmniauthCallbacksController < Devise::OmniauthCallback
 
   def twitter
     identity_initialize_or_create_and_redirect(twitter_identity)
-
   end
 
   def google_oauth2
