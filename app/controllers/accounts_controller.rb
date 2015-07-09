@@ -7,7 +7,7 @@ class AccountsController < ApplicationController
       current_identity.save
       redirect_to controller: '/home', action: 'index'
     else
-      flash[:error] = resource.errors.full_messages.to_sentence
+      flash[:error] = account.errors.full_messages.to_sentence
       render 'accounts/new'
     end
   end
