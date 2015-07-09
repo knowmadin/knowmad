@@ -1,6 +1,4 @@
 class AccountsController < ApplicationController
-
-
   def create
     if account.save
       current_identity.account = account
