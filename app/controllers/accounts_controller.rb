@@ -1,5 +1,6 @@
 class AccountsController < ApplicationController
   def create
+    raise "#{params}"
     if account.save
       current_identity.account = account
       current_identity.save!
