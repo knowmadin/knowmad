@@ -2,8 +2,8 @@
   <%= bootstrap_flash %>
 
   <%= form_for(:account,
+    url: {action: 'create'},
     html: {
-      action: account_path,
       class: 'form-auth'
     }) do |f| %>
     <h2 class="form-auth-heading">Choose a subdomain</h2>
