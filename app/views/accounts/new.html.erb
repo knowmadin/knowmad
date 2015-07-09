@@ -7,8 +7,9 @@
     }) do |f| %>
     <h2 class="form-auth-heading">Choose a subdomain</h2>
 
-    <%= f.label :subdomain, class: 'sr-only' %>
-    <%= f.text_field :subdomain, autofocus: true, class: 'form-control subdomain-field', placeholder: '.knowmad.in' %>
+    <div class="wrap">
+      <%= f.text_field :subdomain, autofocus: true, class: 'form-control subdomain-field', placeholder: '.knowmad.in' %>
+    </div>
 
     <%= f.submit 'Save', class: 'btn btn-lg btn-primary btn-block' %>
   <% end %>
