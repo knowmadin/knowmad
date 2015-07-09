@@ -18,6 +18,8 @@ class SubdomainValidator < ActiveModel::EachValidator
       object.errors[attribute] << 'cannot be a reserved name'
     end
 
+    raise "#{object} | #{attribute} | #{value}"
+
     object.errors[attribute] << 'must have between 3 and 63 letters' unless (3..63) == value.length
     object.errors[attribute] << 'cannot start or end with a hyphen' unless value =~ /^[^-].*[^-]$/i
     object.errors[attribute] << 'must be alphanumeric; A-Z, 0-9 or hyphen' unless value =~ /^[a-z0-9\-]*$/i
