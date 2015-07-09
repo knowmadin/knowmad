@@ -28,7 +28,7 @@ Rails.application.configure do
   config.assets.js_compressor = :uglifier
   config.assets.css_compressor = :sass
 
-  config.action_dispatch.show_exceptions = true 
+  config.action_dispatch.show_exceptions = true
 
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
