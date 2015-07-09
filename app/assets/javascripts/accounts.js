@@ -2,6 +2,6 @@
 // All this logic will automatically be available in application.js.
 var subdomainField = $('.subdomain-field');
 
-subdomainField.on('keyup focus', function() {
+subdomainField.on('change focus', function() {
   $('.mirror-input').val(subdomainField.val() + '.knowmad.in');
 });
