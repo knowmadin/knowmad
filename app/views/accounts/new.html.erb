@@ -9,7 +9,7 @@
 
     <div class="wrap">
       <input class="mirror-input form-control">
-      <%= f.text_field :subdomain, class: 'form-control subdomain-field', placeholder: 'subdomain.knowmad.in' %>
+      <%= f.text_field :subdomain, class: 'form-control subdomain-field', autocomplete: false, placeholder: 'subdomain.knowmad.in' %>
     </div>
 
     <%= f.submit 'Save', class: 'btn btn-lg btn-primary btn-block' %>
