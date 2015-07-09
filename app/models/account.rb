@@ -1,3 +1,5 @@
+require 'knowmad/subdomain_validator'
+
 class Account < ActiveRecord::Base
   validates :subdomain, presence: true, uniqueness: true, subdomain: true
 
