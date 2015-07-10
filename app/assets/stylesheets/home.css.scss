@@ -1,0 +1,15 @@
+.dropdown {
+  a {
+    color: white;
+    margin-top: 14px;
+    font-size: x-large;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .dropdown-menu {
+    margon-top: 6px;
+  }
+}
