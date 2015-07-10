@@ -5,11 +5,12 @@
     font-size: x-large;
 
     &:hover {
+      color: white;
       text-decoration: none;
     }
   }
 
   .dropdown-menu {
-    margon-top: 6px;
+    margin-top: 6px;
   }
 }
