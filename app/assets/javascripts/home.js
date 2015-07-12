@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  debugger;
+
   var basic_choropleth = new Datamap({
     element: document.getElementById("basic_choropleth"),
     projection: 'mercator',
