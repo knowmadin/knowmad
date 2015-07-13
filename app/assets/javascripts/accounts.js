@@ -14,7 +14,7 @@ $(document).ready(function() {
     }
   });
 
-  if (subdomainField && subdomainField.val().length) {
+  if (subdomainField.val() && subdomainField.val().length) {
     mirrorInput.val(subdomainField.val() + '.knowmad.in');
   }
 });
