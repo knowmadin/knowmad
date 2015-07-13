@@ -4,6 +4,9 @@ $(document).ready(function() {
     projection: 'mercator',
     fills: {
       defaultFill: "#428bca"
+    },
+    geographyConfig: {
+      highlightFillColor: '#357ebd'
     }
   });
 
