@@ -10,5 +10,5 @@ $(document).ready(function() {
     }
   });
 
-  var colors = d3.scale.category10();
+  d3.scale.category10();
 });

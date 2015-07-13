@@ -3,14 +3,14 @@
  *= require_self
  */
 
-html {
+html, body {
+  min-height: 100% !important;
   height: 100%;
 }
 
 body {
   background-color: #eee;
   margin-bottom: 30px;
-  min-height: 100%;
 }
 
 .navbar-default {
