@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var map = $('basic_choropleth').datamaps({
+  var map = $('#basic_choropleth').datamaps({
     projection: 'mercator',
     fills: {
       defaultFill: '#428bca'
