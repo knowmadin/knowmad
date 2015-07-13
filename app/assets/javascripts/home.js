@@ -6,7 +6,8 @@ $(document).ready(function() {
       defaultFill: "#428bca"
     },
     geographyConfig: {
-      highlightFillColor: '#357ebd'
+      highlightFillColor: '#357ebd',
+      highlightBorderColor: 'rgba(253, 253, 253)'
     }
   });
 
