@@ -1,6 +1,5 @@
 $(document).ready(function() {
-  new Datamap({
-    element: document.getElementById('basic_choropleth'),
+  var map = $('basic_choropleth').datamaps({
     projection: 'mercator',
     fills: {
       defaultFill: '#428bca'
@@ -11,5 +10,7 @@ $(document).ready(function() {
     }
   });
 
-  d3.scale.category10();
+  $(window).on('resize', function() {
+    map.resize();
+  });
 });
