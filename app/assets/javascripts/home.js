@@ -1,16 +1,6 @@
 $(document).ready(function() {
-  var map = $('#basic_choropleth').datamaps({
-    projection: 'mercator',
-    fills: {
-      defaultFill: '#428bca'
-    },
-    geographyConfig: {
-      highlightFillColor: '#357ebd',
-      highlightBorderColor: 'rgba(253, 253, 253)'
-    }
-  });
 
-  $(window).on('resize', function() {
-    map.resize();
-  });
+  L.mapbox.accessToken = 'pk.eyJ1IjoidmttaXRhIiwiYSI6IjE1ZWZiZDhhMTI1NzJjMTA2ZWRhOGRmOTBkYTJmOTRlIn0.UQVq8Xf_O6V1G8eFCRU3SQ';
+  L.mapbox.map('map', 'vkmita.4e03a495');
+
 });
