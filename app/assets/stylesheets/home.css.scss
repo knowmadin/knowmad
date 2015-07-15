@@ -27,9 +27,12 @@
   background: transparent;
 }
 
-div.map-search.navbar-form {
-  width: 80%;
-  padding-left: 83px;
+div.map-search {
+
+  &.navbar-form {
+    width: 80%;
+    padding-left: 83px;
+  }
 
   .form-group {
     width: 100%;
