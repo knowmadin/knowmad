@@ -4,13 +4,6 @@
       <%= image_tag "logo.png" %>
     </a>
 
-    <form class="navbar-form navbar-left map-search" role="search">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Where you at?">
-        <i class="glyphicons glyphicons-search"></i>
-      </div>
-    </form>
-
     <% if email_identity_signed_in? %>
       <%= link_to '', destroy_session_path(:email_identity), method: :delete,
         class: 'pull-right log-out glyphicons glyphicons-log-out' %>
@@ -33,5 +26,15 @@
         </ul>
       </div>
     <% end %>
+
+    <% if controller_name == 'home' %>
+      <form class="navbar-form navbar-right map-search" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Where you at?">
+          <i class="glyphicons glyphicons-search"></i>
+        </div>
+      </form>
+    <% end %>
+
   </div>
 </div>
