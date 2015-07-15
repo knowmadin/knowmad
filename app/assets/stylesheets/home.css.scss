@@ -27,20 +27,24 @@
   background: transparent;
 }
 
-.map-search  {
-  width: 80% !important;
+.container {
+  .map-search  {
+    margin-bottom: 0px;
+    margin-top: 7px;
+    width: 80% !important;
 
-  .form-group {
-    width: 100%;
+    .form-group {
+      width: 100%;
 
-    .glyphicons-search {
-      color: #999999;
-      margin-left: -25px;
-      margin-top: 11px;
-    }
+      .glyphicons-search {
+        color: #999999;
+        margin-left: -25px;
+        margin-top: 11px;
+      }
 
-    .form-control {
-      width: 80%;
+      .form-control {
+        width: 80%;
+      }
     }
   }
 }
