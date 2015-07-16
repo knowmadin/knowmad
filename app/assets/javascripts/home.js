@@ -8,13 +8,13 @@ $(document).ready(function() {
 
   function click(e) {
     if (numberOfClicks == 0) {
-      setTimeout(reaction, 200);
+      setTimeout(reaction(e), 200);
     }
 
     numberOfClicks = numberOfClicks + 1;
   }
 
-  function reaction() {
+  function reaction(e) {
     if (numberOfClicks === 1) {
       console.log(e.containerPoint.toString() + ', ' + e.latlng.toString())
     } else {
