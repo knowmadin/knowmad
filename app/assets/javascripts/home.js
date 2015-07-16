@@ -8,7 +8,7 @@ $(document).ready(function() {
 
   function click(e) {
     debugger;
-    if (numberOfClicks == 0) {
+    if (numberOfClicks === 0) {
       setTimeout(reaction.bind(this, e), 200);
     }
 
