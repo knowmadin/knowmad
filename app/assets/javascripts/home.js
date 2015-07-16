@@ -9,7 +9,7 @@ $(document).ready(function() {
   function click(e) {
     debugger;
     if (numberOfClicks == 0) {
-      setTimeout(reaction(e), 200);
+      setTimeout(reaction.bind(this, e), 200);
     }
 
     numberOfClicks = numberOfClicks + 1;
