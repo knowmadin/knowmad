@@ -11,7 +11,7 @@ octopus:
       database: knowmad_development
       username: admin
       password: admin
-      host: mysql
+      host: <%= ENV['RAILS_ENV'] == 'development' ? 'localhost' : 'mysql'  %>
       pool: 5
     slave:
       adapter: mysql2
@@ -20,7 +20,7 @@ octopus:
       database: knowmad_development
       username: admin
       password: admin
-      host: mysqlslave
+      host: <%= ENV['RAILS_ENV'] == 'development' ? 'localhost' : 'mysqlslave'  %>
       pool: 5
 
   production:
@@ -30,7 +30,7 @@ octopus:
       database: knowmad_production
       username: <%= ENV['KNOWMAD_PRODUCTION_DB_MASTER_USER'] %>
       password: <%= ENV['KNOWMAD_PRODUCTION_DB_MASTER_PASS'] %>
-      host: mysql
+      host: <%= ENV['RAILS_ENV'] == 'development' ? 'localhost' : 'mysql'  %>
       pool: 5
     slave:
       adapter: mysql2
@@ -39,5 +39,5 @@ octopus:
       database: knowmad_production
       username: <%= ENV['KNOWMAD_PRODUCTION_DB_SLAVE_USER'] %>
       password: <%= ENV['KNOWMAD_PRODUCTION_DB_SLAVE_PASS'] %>
-      host: mysqlslave
+      host: <%= ENV['RAILS_ENV'] == 'development' ? 'localhost' : 'mysqlslave'  %>
       pool: 5

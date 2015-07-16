@@ -7,6 +7,7 @@ $(document).ready(function() {
   map.on('click', click);
 
   function click(e) {
+    debugger;
     if (numberOfClicks == 0) {
       setTimeout(reaction(e), 200);
     }
@@ -15,6 +16,7 @@ $(document).ready(function() {
   }
 
   function reaction(e) {
+    debugger;
     if (numberOfClicks === 1) {
       console.log(e.containerPoint.toString() + ', ' + e.latlng.toString())
     } else {
