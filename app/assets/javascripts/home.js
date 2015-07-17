@@ -22,7 +22,13 @@ if ($('#map')) {
         $.ajax({
           url: googleGeocodeApiUrl
         }).done(function(json) {
-          json;
+          var addresses = [];
+
+          for (var i = 0, l = json.results.length ; i < l ; i++) {
+            addresses.push(json.results[i].formatted_address)
+          }
+
+          console.log(addresses);
         });
       } else {
         console.log(numberOfClicks.toString())
