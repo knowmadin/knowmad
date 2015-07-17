@@ -27,18 +27,13 @@ if ($('#map')) {
               console.log(context[i]);
             }
 
-            var googleGeocodeApiUrl = 'https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyCTcnA2Fr6ZH97xLLN94J5tIP3Rab_HyQ4&latlng=' + e.latlng.lat.toString() + ',' + e.latlng.lng.toString()
-
-            debugger;
+            var googleGeocodeApiUrl = 'https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyCTcnA2Fr6ZH97xLLN94J5tIP3Rab_HyQ4&latlng=' + e.latlng.lat.toString() + ',' + e.latlng.lng.toString();
 
             $.ajax({
               url: googleGeocodeApiUrl
             }).done(function(json) {
-              debugger;
+              console.log(json);
             });
-
-            debugger;
-            //map.fitBounds([[result.features[0].bbox[0], result.features[0].bbox[1]], [result.features[0].bbox[2], result.features[0].bbox[3]]]);
           }
         })
       } else {
