@@ -17,6 +17,8 @@ if ($('#map')) {
 
     function reaction(e, map) {
       if (numberOfClicks === 1) {
+        map.setView([e.latlng.lat, e.latlng.lng], map.getZoom());
+
         var googleGeocodeApiUrl = 'https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyCTcnA2Fr6ZH97xLLN94J5tIP3Rab_HyQ4&latlng=' + e.latlng.lat.toString() + ',' + e.latlng.lng.toString();
 
         $.ajax({
