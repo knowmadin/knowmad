@@ -46,6 +46,8 @@ if ($('#map')) {
                 case 'country':
                   politicalRegion = 'country';
                   break;
+                default:
+                  politicalRegion = 'region';
               }
 
               modalBody += '<li class="list-group-item">' + resultComponents[i].long_name + '<span class="label label-primary pull-right">' + politicalRegion + '</span></li>';
