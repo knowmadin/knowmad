@@ -12,13 +12,13 @@ if ($('#map')) {
         setTimeout(reaction.bind(this, e, map), 500);
       }
 
-      map.setView([e.latlng.lat, e.latlng.lng], map.getZoom());
       numberOfClicks = numberOfClicks + 1;
     }
 
     function reaction(e, map) {
       if (numberOfClicks === 1) {
         var googleGeocodeApiUrl = 'https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyCTcnA2Fr6ZH97xLLN94J5tIP3Rab_HyQ4&latlng=' + e.latlng.lat.toString() + ',' + e.latlng.lng.toString();
+        map.setView([e.latlng.lat, e.latlng.lng], map.getZoom());
 
         $.ajax({
           url: googleGeocodeApiUrl
