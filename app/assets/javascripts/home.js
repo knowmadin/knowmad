@@ -24,13 +24,15 @@ if ($('#map')) {
         $.ajax({
           url: googleGeocodeApiUrl
         }).done(function(json) {
-          var addresses = [];
+          var addresses = [],
+              results = json.results;
 
-          console.log(json.results);
-          for (var i = 0, l = json.results.length ; i < l ; i++) {
-            console.log(json.results[i].types.indexOf('political'));
-            if (json.results[i].types.indexOf('political') !== -1) {
-              addresses.push([json.results[i].formatted_address, json.results[i]]);
+          console.log(results);
+          for (var i = 0, l = json.results.length; i < l; i++) {
+            console.log(results[i].types.indexOf('political'));
+
+            if (results[i].types.indexOf('political') !== -1) {
+              addresses.push([results.formatted_address, results[i]]);
             }
           }
 
