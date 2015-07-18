@@ -28,6 +28,12 @@ if ($('#map')) {
 
           for (var i = 0, l = resultComponents.length; i < l; i++) {
             if (resultComponents[i].types.indexOf('political') >= 0) {
+              console.log(resultComponents[i].types);
+              switch (resultComponents[i].types[0]) {
+                case '':
+                  break;
+              }
+
               modalContent += '<li>' + resultComponents[i].long_name + '</li>';
             }
           }
