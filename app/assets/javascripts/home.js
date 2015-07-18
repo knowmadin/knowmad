@@ -23,15 +23,12 @@ if ($('#map')) {
         $.ajax({
           url: googleGeocodeApiUrl
         }).done(function(json) {
-          var addresses = [],
-              results = json.results;
+          var resultComponents = json.results[0].address_components,
+              modalContent = '<ul>';
 
-          console.log(results);
-
-          var modalContent = '<ul>';
-          for (var i = 0, l = results.length; i < l; i++) {
-            if (results[i].types.indexOf('political') >= 0) {
-              modalContent += '<li>' + results[i].formatted_address + '</li>';
+          for (var i = 0, l = resultComponents.length; i < l; i++) {
+            if (resultComponents[i].types.indexOf('political') >= 0) {
+              modalContent += '<li>' + resultComponents[i].long_name + '</li>';
             }
           }
 
