@@ -55,6 +55,19 @@ if ($('#map')) {
           }
 
           $('.address-components').html(modalBody + '</ul>');
+
+          $('.modal .list-group .list-group-item').mouseover(function() {
+            $(this).addClass('active')
+              .nextAll('.list-group-item')
+              .addClass('active');
+          });
+
+          $('.modal .list-group .list-group-item').mouseout(function() {
+            $(this).removeClass('active')
+              .nextAll('.list-group-item')
+              .removeClass('active');
+          });
+
           $('#address-modal').modal();
         });
       } else {
