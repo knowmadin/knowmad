@@ -69,8 +69,10 @@
       cursor: pointer;
     }
 
-    .list-group-item {
-      &.active {
+    .list-group-item.active {
+        background-color: #65A5DA;
+
+      &:hover {
         background-color: #65A5DA;
       }
     }
