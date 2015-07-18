@@ -26,11 +26,11 @@ if ($('#map')) {
         }).done(function(json) {
           var addresses = [];
 
-          debugger;
           console.log(json.results);
           for (var i = 0, l = json.results.length ; i < l ; i++) {
-            debugger;
-            addresses.push([json.results[i].formatted_address, json.results[i]])
+            if (json.results[i].types.indexOf('political')) {
+              addresses.push([json.results[i].formatted_address, json.results[i]]);
+            }
           }
 
           console.log(addresses);
