@@ -32,14 +32,19 @@ if ($('#map')) {
               switch (resultComponents[i].types[0]) {
                 case 'neighborhood':
                   politicalRegion = 'neighborhood';
+                  break;
                 case 'locality':
                   politicalRegion = 'city';
+                  break;
                 case 'administrative_area_level_2':
                   politicalRegion = 'county';
+                  break;
                 case 'administrative_area_level_1':
                   politicalRegion = 'state';
+                  break;
                 case 'country':
                   politicalRegion = 'country';
+                  break;
               }
 
               modalBody += '<li>' + politicalRegion + ': ' + resultComponents[i].long_name + '</li>';
