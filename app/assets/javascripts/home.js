@@ -30,7 +30,7 @@ if ($('#map')) {
           for (var i = 0, l = results.length; i < l; i++) {
             console.log(results[i].types.indexOf('political'));
 
-            if (results[i].types.indexOf('political') !== -1) {
+            if (results[i].types.indexOf('political') >= 0) {
               addresses.push([results.formatted_address, results[i]]);
             }
           }
