@@ -26,6 +26,7 @@ if ($('#map')) {
           var resultComponents = json.results[0].address_components,
             modalBody = '<ul class="list-group">';
 
+          console.log(json.results[0]);
           for (var i = 0, l = resultComponents.length, politicalRegion; i < l; i++) {
             if (resultComponents[i].types.indexOf('political') >= 0) {
               console.log(resultComponents[i].types);
