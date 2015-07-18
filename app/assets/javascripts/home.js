@@ -24,21 +24,29 @@ if ($('#map')) {
           url: googleGeocodeApiUrl
         }).done(function(json) {
           var resultComponents = json.results[0].address_components,
-              modalContent = '<ul>';
+            modalBody = '<ul>';
 
-          for (var i = 0, l = resultComponents.length; i < l; i++) {
+          for (var i = 0, l = resultComponents.length, politicalRegion; i < l; i++) {
             if (resultComponents[i].types.indexOf('political') >= 0) {
               console.log(resultComponents[i].types);
               switch (resultComponents[i].types[0]) {
-                case '':
-                  break;
+                case 'neighborhood':
+                  politicalRegion = 'neighborhood';
+                case 'locality':
+                  politicalRegion = 'city';
+                case 'administrative_area_level_2':
+                  politicalRegion = 'county';
+                case 'administrative_area_level_1':
+                  politicalRegion = 'state';
+                case 'country':
+                  politicalRegion = 'country';
               }
 
-              modalContent += '<li>' + resultComponents[i].long_name + '</li>';
+              modalBody += '<li>' + politicalRegion + ': ' + resultComponents[i].long_name + '</li>';
             }
           }
 
-          $('.modal-content').html(modalContent + '</ul>');
+          $('.modal-body').append(modalBody + '</ul>');
           $('#address-modal').modal();
         });
       } else {
