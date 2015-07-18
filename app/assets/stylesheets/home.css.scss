@@ -64,5 +64,9 @@
 
   .modal-content .list-group {
     margin-bottom: 0;
+
+    &.active {
+      background-color: #65A5DA;
+    }
   }
 }
