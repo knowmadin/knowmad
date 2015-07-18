@@ -23,6 +23,8 @@ if ($('#map')) {
         $.ajax({
           url: googleGeocodeApiUrl
         }).done(function(json) {
+          console.log(json);
+
           var resultComponents = json.results[0].address_components,
             modalBody = '<ul class="list-group">';
 
