@@ -56,3 +56,13 @@
     }
   }
 }
+
+.modal {
+  .modal-header {
+    border: none;
+  }
+
+  .modal-content .list-group {
+    margin-bottom: 0;
+  }
+}
