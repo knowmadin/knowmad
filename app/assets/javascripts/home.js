@@ -24,7 +24,7 @@ if ($('#map')) {
           url: googleGeocodeApiUrl
         }).done(function(json) {
           var resultComponents = json.results[0].address_components,
-            modalBody = '<ul>';
+            modalBody = '<ul class="list-group">';
 
           for (var i = 0, l = resultComponents.length, politicalRegion; i < l; i++) {
             if (resultComponents[i].types.indexOf('political') >= 0) {
@@ -47,7 +47,7 @@ if ($('#map')) {
                   break;
               }
 
-              modalBody += '<li>' + politicalRegion + ': ' + resultComponents[i].long_name + '</li>';
+              modalBody += '<li class="list-group-item">' + politicalRegion + ': ' + resultComponents[i].long_name + '</li>';
             }
           }
 
