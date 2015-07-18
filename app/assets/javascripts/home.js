@@ -48,7 +48,7 @@ if ($('#map')) {
                   break;
               }
 
-              modalBody += '<li class="list-group-item">' + resultComponents[i].long_name + '<span class="label label-primary">' + politicalRegion + '</span></li>';
+              modalBody += '<li class="list-group-item">' + resultComponents[i].long_name + '<span class="label label-primary pull-right">' + politicalRegion + '</span></li>';
             }
           }
 
