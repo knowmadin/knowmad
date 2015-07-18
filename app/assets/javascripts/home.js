@@ -28,7 +28,8 @@ if ($('#map')) {
 
           console.log(json.results);
           for (var i = 0, l = json.results.length ; i < l ; i++) {
-            if (json.results[i].types.indexOf('political')) {
+            console.log(json.results[i].types.indexOf('political'));
+            if (json.results[i].types.indexOf('political') !== -1) {
               addresses.push([json.results[i].formatted_address, json.results[i]]);
             }
           }
