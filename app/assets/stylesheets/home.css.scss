@@ -65,12 +65,14 @@
   .modal-content .list-group {
     margin-bottom: 0;
 
-    &.active {
-      background-color: #65A5DA;
-    }
-
     &:hover {
       cursor: pointer;
+    }
+
+    .list-group-item {
+      &.active {
+        background-color: #65A5DA;
+      }
     }
   }
 }
