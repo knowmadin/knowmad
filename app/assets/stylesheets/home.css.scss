@@ -68,5 +68,9 @@
     &.active {
       background-color: #65A5DA;
     }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
