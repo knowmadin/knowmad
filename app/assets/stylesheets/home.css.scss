@@ -58,6 +58,8 @@
 }
 
 .modal {
+  opacity: 0.88;
+
   .modal-header {
     border: none;
   }
@@ -69,11 +71,17 @@
       cursor: pointer;
     }
 
-    .list-group-item.active {
+    .list-group-item {
+      border-radius: 0px;
+
+      &.active {
+        border-radius: 0px;
         background-color: #65A5DA;
 
-      &:hover {
-        background-color: #65A5DA;
+        &:hover {
+          border-radius: 0px;
+          background-color: #65A5DA;
+        }
       }
     }
   }
