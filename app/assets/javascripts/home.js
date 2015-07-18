@@ -51,7 +51,7 @@ if ($('#map')) {
             }
           }
 
-          $('.modal-body').append(modalBody + '</ul>');
+          $('.modal-body').html(modalBody + '</ul>');
           $('#address-modal').modal();
         });
       } else {
