@@ -26,9 +26,11 @@ if ($('#map')) {
         }).done(function(json) {
           var addresses = [];
 
+          debugger;
           console.log(json.results);
           for (var i = 0, l = json.results.length ; i < l ; i++) {
-            addresses.push(json.results[i].formatted_address)
+            debugger;
+            addresses.push([json.results[i].formatted_address, json.results[i]])
           }
 
           console.log(addresses);
