@@ -27,15 +27,16 @@ if ($('#map')) {
               results = json.results;
 
           console.log(results);
-          for (var i = 0, l = results.length; i < l; i++) {
-            console.log(results[i].types.indexOf('political'));
 
+          var modalContent = '<ul>';
+          for (var i = 0, l = results.length; i < l; i++) {
             if (results[i].types.indexOf('political') >= 0) {
-              addresses.push([results.formatted_address, results[i]]);
+              modalContent += '<li>' + results[i].formatted_address + '</li>';
             }
           }
 
-          console.log(addresses);
+          $('.modal-content').html(modalContent + '</ul>');
+          $('#address-modal').modal();
         });
       } else {
         console.log(numberOfClicks.toString());
